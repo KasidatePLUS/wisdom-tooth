@@ -18,6 +18,10 @@
 <meta property="og:title" content="Wisdom Tooth Recovery Tracker · memolab.me">
 <meta property="og:description" content="ติดตามการฟื้นตัวหลังถอนฟันคุดแบบ Real-time ทุก 6 ชั่วโมง ครบ 30 วัน — ข้อมูลเพื่อการศึกษาเท่านั้น">
 <meta property="og:image" content="https://wisdomtooth.memolab.me/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Wisdom Tooth Recovery Tracker — ติดตามการฟื้นตัวหลังถอนฟันคุด">
 <meta property="og:site_name" content="memolab.me">
 <meta property="og:locale" content="th_TH">
 
@@ -822,12 +826,186 @@ html { -webkit-overflow-scrolling: touch; }
 }
 #fab:active { transform:scale(.88); }
 #fab.hide { opacity:0; transform:translateY(20px); pointer-events:none; }
+
+/* ━━━ QUICK ACTIONS BAR ━━━ */
+.qa-row{display:flex;gap:8px;padding:10px 14px 4px;overflow-x:auto;scrollbar-width:none}
+.qa-row::-webkit-scrollbar{display:none}
+.qa-btn{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 14px;background:var(--sf2);border:1px solid var(--bd);border-radius:14px;cursor:pointer;color:var(--tx);font-family:'Noto Sans Thai',sans-serif;font-size:11px;font-weight:600;transition:all .18s;-webkit-tap-highlight-color:transparent}
+.qa-btn:active{transform:scale(.92)}
+.qa-btn .qa-ico{font-size:22px;line-height:1}
+.qa-btn.qa-red{border-color:var(--r3);background:var(--r2)}
+.qa-btn.qa-blue{border-color:rgba(10,132,255,.25);background:var(--b2)}
+.qa-btn.qa-green{border-color:rgba(48,209,88,.2);background:var(--g2)}
+.qa-btn.qa-purple{border-color:var(--p3);background:var(--p2)}
+
+/* ━━━ SCREENER VIEW ━━━ */
+.scr-intro{background:var(--r2);border:1px solid var(--r3);border-radius:14px;padding:16px;margin-bottom:16px}
+.scr-intro-title{font-size:16px;font-weight:800;color:var(--r);margin-bottom:6px}
+.scr-intro-sub{font-size:12px;color:var(--tx2);line-height:1.7}
+.scr-q-card{background:var(--sf2);border:1px solid var(--bd);border-radius:14px;padding:16px;margin-bottom:12px}
+.scr-q-num{font-size:10px;color:var(--tx3);font-family:'JetBrains Mono',monospace;margin-bottom:4px}
+.scr-q-text{font-size:14px;font-weight:600;color:var(--tx);margin-bottom:12px;line-height:1.5}
+.scr-q-btns{display:flex;gap:8px}
+.scr-q-btn{flex:1;padding:10px;border-radius:10px;border:1.5px solid var(--bd2);background:var(--sf3);color:var(--tx2);font-family:'Noto Sans Thai',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .18s}
+.scr-q-btn.yes.sel{background:rgba(255,58,92,.18);border-color:var(--r);color:var(--r)}
+.scr-q-btn.no.sel{background:rgba(48,209,88,.14);border-color:var(--g);color:var(--g)}
+.scr-result{border-radius:16px;padding:20px;margin-top:4px;display:none}
+.scr-result.show{display:block}
+.scr-result.green{background:rgba(48,209,88,.1);border:2px solid var(--g)}
+.scr-result.yellow{background:rgba(255,214,10,.1);border:2px solid var(--y)}
+.scr-result.red{background:rgba(255,58,92,.12);border:2px solid var(--r)}
+.scr-risk-badge{font-size:13px;font-weight:800;margin-bottom:8px}
+.scr-risk-badge.green{color:var(--g)}
+.scr-risk-badge.yellow{color:var(--y)}
+.scr-risk-badge.red{color:var(--r)}
+.scr-risk-title{font-size:18px;font-weight:800;margin-bottom:8px}
+.scr-risk-body{font-size:13px;color:var(--tx2);line-height:1.8}
+.scr-reset-btn{width:100%;margin-top:14px;padding:12px;background:var(--sf3);border:1px solid var(--bd2);border-radius:10px;color:var(--tx2);font-family:'Noto Sans Thai',sans-serif;font-size:13px;cursor:pointer;font-weight:600}
+
+/* ━━━ MEDICATION TRACKER VIEW ━━━ */
+.med-date-banner{background:var(--sf2);border:1px solid var(--bd);border-radius:14px;padding:14px 16px;margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
+.med-date-text{font-size:14px;font-weight:700}
+.med-date-sub{font-size:11px;color:var(--tx2);margin-top:2px}
+.med-session{background:var(--sf2);border:1px solid var(--bd);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.med-session-head{padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--bd)}
+.med-session-ico{font-size:20px}
+.med-session-title{font-size:14px;font-weight:700}
+.med-session-time{font-size:11px;color:var(--tx2);margin-left:auto}
+.med-item{padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--bd);cursor:pointer;transition:background .15s;-webkit-tap-highlight-color:transparent}
+.med-item:last-child{border-bottom:none}
+.med-item:active{background:var(--sf3)}
+.med-check{width:22px;height:22px;border-radius:6px;border:2px solid var(--bd2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .18s;background:var(--sf3)}
+.med-check.done{background:var(--g);border-color:var(--g)}
+.med-check.done::after{content:'✓';color:#fff;font-size:13px;font-weight:800}
+.med-item-name{font-size:13px;font-weight:600;flex:1}
+.med-item-sub{font-size:11px;color:var(--tx2);margin-top:2px}
+.med-item-type{font-size:10px;padding:2px 7px;border-radius:20px;font-weight:700;flex-shrink:0}
+.med-item-type.anti{background:rgba(10,132,255,.15);color:var(--b)}
+.med-item-type.pain{background:rgba(255,136,0,.15);color:var(--o)}
+.med-item-type.swell{background:rgba(191,90,242,.15);color:var(--p)}
+.med-progress{margin-bottom:14px}
+.med-prog-bar{height:6px;background:var(--sf3);border-radius:3px;overflow:hidden;margin-top:6px}
+.med-prog-fill{height:100%;background:linear-gradient(90deg,var(--g),var(--t));border-radius:3px;transition:width .4s}
+.med-prog-text{font-size:12px;color:var(--tx2)}
+.med-warn{background:rgba(255,214,10,.08);border:1px solid rgba(255,214,10,.3);border-radius:12px;padding:12px 14px;margin-bottom:12px;font-size:12px;color:var(--y);line-height:1.7}
+
+/* ━━━ PAIN HEATMAP (SVG line chart) ━━━ */
+.heatmap-wrap{background:var(--sf2);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-top:14px}
+.heatmap-title{font-size:12px;font-weight:700;color:var(--tx2);margin-bottom:10px;display:flex;align-items:center;justify-content:space-between}
+.heatmap-svg-wrap{width:100%;overflow:hidden}
+.heatmap-svg{width:100%;height:120px}
+.heatmap-warn{margin-top:10px;background:rgba(255,58,92,.1);border:1px solid var(--r3);border-radius:10px;padding:10px 12px;font-size:12px;color:var(--r);display:none}
+.heatmap-warn.show{display:block}
+.heatmap-legend{display:flex;gap:10px;margin-top:8px;flex-wrap:wrap}
+.heatmap-leg-item{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--tx2)}
+.heatmap-leg-dot{width:8px;height:8px;border-radius:50%}
+
+/* ━━━ VOICE FAB ━━━ */
+#voice-fab{position:fixed;bottom:calc(144px + env(safe-area-inset-bottom,0px));right:16px;
+  width:48px;height:48px;border-radius:50%;
+  background:linear-gradient(135deg,var(--p),#7b2dbf);
+  border:none;color:#fff;font-size:18px;cursor:pointer;
+  box-shadow:0 4px 18px rgba(191,90,242,.5);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;z-index:594;
+  -webkit-tap-highlight-color:transparent}
+#voice-fab:active{transform:scale(.88)}
+#voice-fab.speaking{animation:pulse-ring 1.2s ease-in-out infinite}
+@keyframes pulse-ring{0%,100%{box-shadow:0 4px 18px rgba(191,90,242,.5)}50%{box-shadow:0 4px 28px rgba(191,90,242,.9),0 0 0 8px rgba(191,90,242,.15)}}
 </style>
 
 </head>
 <body>
 <canvas id="confetti-canvas"></canvas>
 <div class="gr"></div><div class="gb"></div>
+
+<!-- ═══ VOICE FAB ═══ -->
+<button id="voice-fab" title="อ่านคำแนะนำวันนี้ให้ฟัง" onclick="toggleVoiceGuide()">🔊</button>
+
+<!-- ═══ SYMPTOM SCREENER VIEW ═══ -->
+<div class="view" id="view-screener">
+  <div class="view-head">
+    <button class="view-back" onclick="closeView('view-screener')">←</button>
+    <div class="view-title">🏥 ประเมินอาการผิดปกติ</div>
+  </div>
+  <div class="view-body">
+    <div class="scr-intro">
+      <div class="scr-intro-title">⚕️ Smart Screener — Dry Socket &amp; Infection</div>
+      <div class="scr-intro-sub">ตอบคำถามต่อไปนี้ตามอาการปัจจุบันของคุณ ระบบจะประเมินระดับความเสี่ยงและแนะนำขั้นตอนต่อไป<br><strong style="color:var(--r)">⚠️ ไม่ใช่การวินิจฉัยทางการแพทย์</strong></div>
+    </div>
+    <div id="scr-questions">
+      <div class="scr-q-card" data-q="0">
+        <div class="scr-q-num">คำถาม 1 / 5</div>
+        <div class="scr-q-text">อาการปวดเพิ่มขึ้นหลังจากวันที่ 3 แทนที่จะดีขึ้น?<br><span style="font-size:11px;color:var(--tx2)">(ปกติความเจ็บปวดควรลดลงหลังวันที่ 2–3)</span></div>
+        <div class="scr-q-btns">
+          <button class="scr-q-btn yes" onclick="scrAnswer(0,'yes',this)">ใช่ ปวดเพิ่มขึ้น</button>
+          <button class="scr-q-btn no" onclick="scrAnswer(0,'no',this)">ไม่ใช่ ปวดลดลง</button>
+        </div>
+      </div>
+      <div class="scr-q-card" data-q="1">
+        <div class="scr-q-num">คำถาม 2 / 5</div>
+        <div class="scr-q-text">ยาแก้ปวดเริ่มไม่ได้ผลหรือต้องใช้ปริมาณมากขึ้น?</div>
+        <div class="scr-q-btns">
+          <button class="scr-q-btn yes" onclick="scrAnswer(1,'yes',this)">ใช่ ยาไม่ค่อยได้ผล</button>
+          <button class="scr-q-btn no" onclick="scrAnswer(1,'no',this)">ไม่ใช่ ยาได้ผลปกติ</button>
+        </div>
+      </div>
+      <div class="scr-q-card" data-q="2">
+        <div class="scr-q-num">คำถาม 3 / 5</div>
+        <div class="scr-q-text">มีรสชาติหรือกลิ่นเหม็นผิดปกติในปาก?<br><span style="font-size:11px;color:var(--tx2)">(กลิ่นเน่าหรือรสขมผิดปกติอาจบ่งบอกถึงการติดเชื้อ)</span></div>
+        <div class="scr-q-btns">
+          <button class="scr-q-btn yes" onclick="scrAnswer(2,'yes',this)">ใช่ มีกลิ่น/รสผิดปกติ</button>
+          <button class="scr-q-btn no" onclick="scrAnswer(2,'no',this)">ไม่มี ปกติดี</button>
+        </div>
+      </div>
+      <div class="scr-q-card" data-q="3">
+        <div class="scr-q-num">คำถาม 4 / 5</div>
+        <div class="scr-q-text">บริเวณแผลบวมแดงเพิ่มขึ้นหลังวันที่ 3?<br><span style="font-size:11px;color:var(--tx2)">(บวมลดลงเล็กน้อยในวันแรก ควรลดลงชัดเจนหลังวันที่ 3)</span></div>
+        <div class="scr-q-btns">
+          <button class="scr-q-btn yes" onclick="scrAnswer(3,'yes',this)">ใช่ บวมมากขึ้น</button>
+          <button class="scr-q-btn no" onclick="scrAnswer(3,'no',this)">ไม่ใช่ บวมลดลง</button>
+        </div>
+      </div>
+      <div class="scr-q-card" data-q="4">
+        <div class="scr-q-num">คำถาม 5 / 5</div>
+        <div class="scr-q-text">มีไข้สูงกว่า 38°C หรือหนาวสั่น?</div>
+        <div class="scr-q-btns">
+          <button class="scr-q-btn yes" onclick="scrAnswer(4,'yes',this)">ใช่ มีไข้</button>
+          <button class="scr-q-btn no" onclick="scrAnswer(4,'no',this)">ไม่มีไข้</button>
+        </div>
+      </div>
+    </div>
+    <div class="scr-result" id="scr-result">
+      <div class="scr-risk-badge" id="scr-badge"></div>
+      <div class="scr-risk-title" id="scr-title"></div>
+      <div class="scr-risk-body" id="scr-body"></div>
+      <button class="scr-reset-btn" onclick="scrReset()">🔄 ประเมินใหม่อีกครั้ง</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MEDICATION TRACKER VIEW ═══ -->
+<div class="view" id="view-meds">
+  <div class="view-head">
+    <button class="view-back" onclick="closeView('view-meds')">←</button>
+    <div class="view-title">💊 ติดตามการทานยา</div>
+  </div>
+  <div class="view-body">
+    <div class="med-warn" id="med-warn">⚠️ กรุณาทานยาปฏิชีวนะให้ครบตามที่แพทย์สั่งทุกครั้ง แม้อาการดีขึ้นแล้ว เพื่อป้องกันเชื้อดื้อยา</div>
+    <div class="med-date-banner">
+      <div>
+        <div class="med-date-text" id="med-date-text">—</div>
+        <div class="med-date-sub" id="med-date-sub">—</div>
+      </div>
+      <div style="font-size:24px">💊</div>
+    </div>
+    <div class="med-progress">
+      <div class="med-prog-text">ทานยาแล้ว <span id="med-done-count">0</span> / <span id="med-total-count">0</span> รายการวันนี้</div>
+      <div class="med-prog-bar"><div class="med-prog-fill" id="med-prog-fill" style="width:0%"></div></div>
+    </div>
+    <div id="med-sessions"></div>
+  </div>
+</div>
 
 <!-- ═══ PAIN TRACKER VIEW ═══ -->
 <div class="view" id="view-pain">
@@ -1112,6 +1290,22 @@ html { -webkit-overflow-scrolling: touch; }
     ].map(([d,t,c])=>`<div class="qg-row" style="border-left:3px solid ${c}"><div class="qg-d" style="color:${c}">${d}</div><div>${t}</div></div>`).join('')}
     </div>
   </div>
+</div>
+
+<!-- ═══ QUICK ACTIONS ═══ -->
+<div class="qa-row" id="qa-row">
+  <button class="qa-btn qa-red" onclick="openView('view-screener')">
+    <span class="qa-ico">🏥</span>ประเมินอาการ
+  </button>
+  <button class="qa-btn qa-blue" onclick="openView('view-meds')">
+    <span class="qa-ico">💊</span>บันทึกยา
+  </button>
+  <button class="qa-btn qa-green" onclick="openView('view-pain')">
+    <span class="qa-ico">📈</span>บันทึกปวด
+  </button>
+  <button class="qa-btn qa-purple" onclick="toggleVoiceGuide()">
+    <span class="qa-ico">🔊</span>อ่านให้ฟัง
+  </button>
 </div>
 
 <!-- ═══ FILTERS ═══ -->
@@ -1873,6 +2067,8 @@ function openView(id){
   if(id==='view-notes') renderNotes();
   if(id==='view-cal') renderCalendar();
   if(id==='view-settings') populateSettings();
+  if(id==='view-meds') renderMeds();
+  if(id==='view-pain') setTimeout(renderPainHeatmap,50);
 }
 function closeView(id){
   document.getElementById(id).classList.remove('open');
@@ -2119,6 +2315,256 @@ setTimeout(()=>{
   const savedScroll=sessionStorage.getItem('wt_scroll');
   if(n&&!savedScroll) n.scrollIntoView({behavior:'smooth',block:'center'});
 },600);
+
+// ══════════════════════════════════════════════════════════════
+// SYMPTOM SCREENER
+// ══════════════════════════════════════════════════════════════
+const scrAnswers=new Array(5).fill(null);
+function scrAnswer(q,ans,btn){
+  scrAnswers[q]=ans;
+  const card=btn.closest('.scr-q-card');
+  card.querySelectorAll('.scr-q-btn').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+  haptic('light');
+  if(scrAnswers.every(a=>a!==null)) scrShowResult();
+}
+function scrShowResult(){
+  const yesCount=scrAnswers.filter(a=>a==='yes').length;
+  const res=document.getElementById('scr-result');
+  const badge=document.getElementById('scr-badge');
+  const title=document.getElementById('scr-title');
+  const body=document.getElementById('scr-body');
+  let level,cls;
+  if(yesCount===0){
+    level='green'; cls='green';
+    badge.textContent='🟢 ระดับปกติ';
+    title.textContent='การฟื้นตัวเป็นไปตามปกติ';
+    body.innerHTML='อาการที่คุณมีอยู่ในเกณฑ์ปกติของการฟื้นตัวหลังถอนฟันคุด<br><br><strong>คำแนะนำ:</strong><br>• ดูแลแผลตามปกติ — บ้วนน้ำเกลือ ทานยาตามแพทย์สั่ง<br>• หลีกเลี่ยงอาหารแข็ง ห้ามใช้หลอดดูดในช่วง 3 วันแรก<br>• ติดตามอาการต่อเนื่อง หากมีการเปลี่ยนแปลงค่อยประเมินใหม่';
+  } else if(yesCount===1){
+    level='yellow'; cls='yellow';
+    badge.textContent='🟡 เฝ้าระวัง';
+    title.textContent='ควรติดตามอาการอย่างใกล้ชิด';
+    body.innerHTML='พบสัญญาณที่ต้องเฝ้าระวัง 1 ข้อ อาจเป็นการฟื้นตัวที่ช้ากว่าปกติเล็กน้อย<br><br><strong>คำแนะนำ:</strong><br>• บันทึกระดับความปวดทุกวันในแอปนี้<br>• หากอาการไม่ดีขึ้นภายใน 24–48 ชั่วโมง ควรโทรนัดหมอ<br>• ทานยาปฏิชีวนะให้ครบทุกมื้อโดยไม่หยุดกลางคัน<br>• ดื่มน้ำมาก หลีกเลี่ยงบุหรี่และแอลกอฮอล์';
+  } else {
+    level='red'; cls='red';
+    badge.textContent='🔴 ความเสี่ยงสูง — ควรพบแพทย์';
+    title.textContent='พบสัญญาณเตือนหลายข้อ';
+    body.innerHTML=`พบสัญญาณที่น่าเป็นห่วง <strong>${yesCount} ข้อ</strong> ซึ่งอาจบ่งบอกถึง Dry Socket หรือการติดเชื้อที่ต้องรักษาโดยทันตแพทย์<br><br><strong style="color:var(--r)">⚠️ คำแนะนำเร่งด่วน:</strong><br>• <strong>โทรหาทันตแพทย์หรือคลินิกโดยตรงวันนี้</strong><br>• อย่าหยุดยาปฏิชีวนะเองโดยไม่ปรึกษาแพทย์<br>• หากมีไข้สูง เจ็บปวดรุนแรง หายใจลำบาก ให้ไปห้องฉุกเฉินทันที<br><br><em style="font-size:11px;color:var(--tx3)">การประเมินนี้ไม่ใช่การวินิจฉัยทางการแพทย์ — กรุณาพบแพทย์เพื่อการวินิจฉัยที่ถูกต้อง</em>`;
+  }
+  res.className=`scr-result show ${cls}`;
+  badge.className=`scr-risk-badge ${cls}`;
+  res.scrollIntoView({behavior:'smooth',block:'nearest'});
+  haptic('medium');
+}
+function scrReset(){
+  scrAnswers.fill(null);
+  document.querySelectorAll('.scr-q-btn').forEach(b=>b.classList.remove('sel'));
+  const res=document.getElementById('scr-result');
+  res.className='scr-result';
+  haptic('light');
+}
+
+// ══════════════════════════════════════════════════════════════
+// MEDICATION TRACKER
+// ══════════════════════════════════════════════════════════════
+const MED_KEY='wt_meds_v1';
+const MED_SESSIONS=[
+  {id:'morning',ico:'🌅',title:'เช้า',time:'07:00–08:00'},
+  {id:'noon',ico:'☀️',title:'กลางวัน',time:'12:00–13:00'},
+  {id:'evening',ico:'🌆',title:'เย็น',time:'17:00–18:00'},
+  {id:'night',ico:'🌙',title:'ก่อนนอน',time:'21:00–22:00'},
+];
+const MED_ITEMS=[
+  {id:'anti',name:'ยาปฏิชีวนะ (Antibiotics)',sub:'ทานหลังอาหาร ห้ามหยุดกลางคัน',type:'anti',label:'ยาฆ่าเชื้อ',sessions:['morning','noon','evening']},
+  {id:'pain',name:'ยาแก้ปวด (Painkiller)',sub:'ทานเมื่อปวด ห้ามเกิน 4 ครั้ง/วัน',type:'pain',label:'แก้ปวด',sessions:['morning','noon','evening','night']},
+  {id:'swell',name:'ยาแก้บวม (Anti-inflammatory)',sub:'ทานหลังอาหาร',type:'swell',label:'แก้บวม',sessions:['morning','evening']},
+];
+function getMedKey(date){return`${MED_KEY}_${date.toDateString()}`;}
+function loadMedLog(date){
+  try{return JSON.parse(localStorage.getItem(getMedKey(date)))||{};}catch{return{};}
+}
+function saveMedLog(date,log){
+  try{localStorage.setItem(getMedKey(date),JSON.stringify(log));}catch(e){}
+}
+function toggleMed(session,medId){
+  const today=new Date();
+  const log=loadMedLog(today);
+  const key=`${session}_${medId}`;
+  log[key]=!log[key];
+  saveMedLog(today,log);
+  haptic('light');
+  renderMeds();
+  if(log[key]) showToast('✅ บันทึกการทานยาแล้ว');
+}
+function renderMeds(){
+  const today=new Date();
+  const TH_DAYS=['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัส','ศุกร์','เสาร์'];
+  const TH_MON=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+  const log=loadMedLog(today);
+  const dateEl=document.getElementById('med-date-text');
+  const subEl=document.getElementById('med-date-sub');
+  if(dateEl) dateEl.textContent=`วัน${TH_DAYS[today.getDay()]} ${today.getDate()} ${TH_MON[today.getMonth()]} ${today.getFullYear()+543}`;
+  if(subEl){
+    const dayNum=SURG?Math.floor((Date.now()-SURG.getTime())/86400000)+1:0;
+    subEl.textContent=SURG?`วันฟื้นตัววันที่ ${dayNum}`:'กรอกวันผ่าตัดก่อนใช้งาน';
+  }
+  // count totals
+  let total=0,done=0;
+  MED_SESSIONS.forEach(s=>{
+    MED_ITEMS.forEach(m=>{
+      if(m.sessions.includes(s.id)){total++;if(log[`${s.id}_${m.id}`]) done++;}
+    });
+  });
+  const doneEl=document.getElementById('med-done-count');
+  const totalEl=document.getElementById('med-total-count');
+  const fillEl=document.getElementById('med-prog-fill');
+  if(doneEl) doneEl.textContent=done;
+  if(totalEl) totalEl.textContent=total;
+  if(fillEl) fillEl.style.width=total?`${Math.round(done/total*100)}%`:'0%';
+  const container=document.getElementById('med-sessions');
+  if(!container) return;
+  container.innerHTML=MED_SESSIONS.map(s=>{
+    const items=MED_ITEMS.filter(m=>m.sessions.includes(s.id));
+    return`<div class="med-session">
+      <div class="med-session-head">
+        <span class="med-session-ico">${s.ico}</span>
+        <span class="med-session-title">${s.title}</span>
+        <span class="med-session-time">${s.time}</span>
+      </div>
+      ${items.map(m=>{
+        const key=`${s.id}_${m.id}`;
+        const isDone=!!log[key];
+        return`<div class="med-item" onclick="toggleMed('${s.id}','${m.id}')">
+          <div class="med-check${isDone?' done':''}"></div>
+          <div style="flex:1">
+            <div class="med-item-name" style="${isDone?'text-decoration:line-through;color:var(--tx2)':''}">${m.name}</div>
+            <div class="med-item-sub">${m.sub}</div>
+          </div>
+          <span class="med-item-type ${m.type}">${m.label}</span>
+        </div>`;
+      }).join('')}
+    </div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════════════════════════
+// PAIN HEATMAP (30-day line chart)
+// ══════════════════════════════════════════════════════════════
+function renderPainHeatmap(){
+  const wrap=document.getElementById('pain-heatmap-wrap');
+  if(!wrap) return;
+  let logs; try{logs=JSON.parse(localStorage.getItem(PAIN_KEY))||[];}catch{logs=[];}
+  if(!logs.length){ wrap.style.display='none'; return; }
+  wrap.style.display='block';
+  // Build a day-indexed array (up to 30 entries)
+  const byDay={};
+  logs.forEach(l=>{ const d=new Date(l.ts).toDateString(); if(!byDay[d]||l.ts>byDay[d].ts) byDay[d]=l; });
+  const sorted=Object.values(byDay).sort((a,b)=>a.ts-b.ts).slice(-30);
+  const W=320, H=100, pad=4;
+  const maxV=10;
+  const pts=sorted.map((l,i)=>{
+    const x=pad+i/(Math.max(sorted.length-1,1))*(W-pad*2);
+    const y=H-pad-(l.v/maxV)*(H-pad*2);
+    return{x,y,v:l.v,ts:l.ts};
+  });
+  // Check early warning: pain increases after day 4+
+  let earlyWarn=false;
+  if(SURG&&sorted.length>=2){
+    const day4ts=SURG.getTime()+3*86400000;
+    const after4=sorted.filter(l=>l.ts>day4ts);
+    if(after4.length>=2){
+      const first=after4[0].v, last=after4[after4.length-1].v;
+      if(last>first+2&&last>=6) earlyWarn=true;
+    }
+  }
+  const warnEl=wrap.querySelector('.heatmap-warn');
+  if(warnEl) warnEl.classList.toggle('show',earlyWarn);
+  // Build SVG path
+  const pathD=pts.map((p,i)=>`${i===0?'M':'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+  const areaD=pts.length?pathD+` L${pts[pts.length-1].x.toFixed(1)},${H} L${pts[0].x.toFixed(1)},${H} Z`:'';
+  const dots=pts.map(p=>`<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3" fill="${PAIN_COLORS[p.v]}" stroke="var(--bg)" stroke-width="1.5"/>`).join('');
+  const svg=`<svg viewBox="0 0 ${W} ${H}" class="heatmap-svg" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="hm-grad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="var(--b)" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="var(--b)" stop-opacity="0.02"/>
+      </linearGradient>
+    </defs>
+    ${pts.length>1?`<path d="${areaD}" fill="url(#hm-grad)"/>
+    <path d="${pathD}" fill="none" stroke="var(--t)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`:'' }
+    ${dots}
+  </svg>`;
+  const svgWrap=wrap.querySelector('.heatmap-svg-wrap');
+  if(svgWrap) svgWrap.innerHTML=svg;
+  const title=wrap.querySelector('.heatmap-title span');
+  if(title) title.textContent=`${sorted.length} วันล่าสุด`;
+}
+
+// ══════════════════════════════════════════════════════════════
+// VOICE GUIDE (Web Speech API)
+// ══════════════════════════════════════════════════════════════
+let voiceActive=false;
+function toggleVoiceGuide(){
+  if(!('speechSynthesis' in window)){
+    showToast('⚠️ เบราว์เซอร์นี้ไม่รองรับการอ่านออกเสียง',true); return;
+  }
+  if(voiceActive||window.speechSynthesis.speaking){
+    window.speechSynthesis.cancel();
+    voiceActive=false;
+    document.getElementById('voice-fab').classList.remove('speaking');
+    document.getElementById('voice-fab').textContent='🔊';
+    return;
+  }
+  const text=buildVoiceText();
+  const utter=new SpeechSynthesisUtterance(text);
+  utter.lang='th-TH';
+  utter.rate=0.9;
+  utter.pitch=1;
+  utter.onstart=()=>{
+    voiceActive=true;
+    const fab=document.getElementById('voice-fab');
+    if(fab){fab.classList.add('speaking');fab.textContent='⏹';}
+  };
+  utter.onend=utter.onerror=()=>{
+    voiceActive=false;
+    const fab=document.getElementById('voice-fab');
+    if(fab){fab.classList.remove('speaking');fab.textContent='🔊';}
+  };
+  window.speechSynthesis.speak(utter);
+  haptic('light');
+}
+function buildVoiceText(){
+  if(!SURG||!PROFILE) return 'กรุณากรอกข้อมูลวันผ่าตัดก่อนใช้งานฟีเจอร์นี้';
+  const dayNum=Math.max(1,Math.floor((Date.now()-SURG.getTime())/86400000)+1);
+  const name=PROFILE.name?`คุณ ${PROFILE.name}`:'คุณ';
+  let advice='';
+  if(dayNum<=2) advice='วันนี้เป็นช่วงวิกฤต ห้ามบ้วนน้ำแรง ห้ามใช้หลอดดูด ประคบเย็นบ่อยๆ ทานอาหารเหลวเย็น และพักผ่อนให้มากที่สุด';
+  else if(dayNum<=5) advice='บ้วนน้ำเกลือแบบปล่อยไหลได้แล้ว หลีกเลี่ยงหลอดดูดและอาหารแข็ง ทานยาครบทุกมื้อ สังเกตอาการ Dry Socket';
+  else if(dayNum<=7) advice='ใกล้ถึงเวลาตัดไหม สามารถบ้วนน้ำได้แรงมากขึ้น และเริ่มทานอาหารนิ่มได้มากขึ้นแล้ว';
+  else if(dayNum<=14) advice='ร่างกายฟื้นตัวได้ดี สามารถทานอาหารได้เกือบปกติ ออกกำลังกายเบาๆ ได้แล้ว';
+  else advice='การฟื้นตัวเข้าสู่ระยะปกติ ใช้ชีวิตได้ตามปกติ ทานอาหารที่มีโปรตีนและวิตามินซีสูงเพื่อเร่งการสร้างเนื้อเยื่อ';
+  return `สวัสดี ${name} วันนี้เป็นวันฟื้นตัววันที่ ${dayNum}. ${advice}`;
+}
+
+// Init heatmap insertion into pain view
+(function initHeatmapInPainView(){
+  const painBody=document.querySelector('#view-pain .view-body');
+  if(!painBody) return;
+  const wrap=document.createElement('div');
+  wrap.className='heatmap-wrap';
+  wrap.id='pain-heatmap-wrap';
+  wrap.style.display='none';
+  wrap.innerHTML=`<div class="heatmap-title"><span>กราฟความเจ็บปวด</span><span style="font-size:10px;color:var(--tx3)">30 วัน</span></div>
+    <div class="heatmap-svg-wrap"></div>
+    <div class="heatmap-warn">⚠️ <strong>Early Warning:</strong> ความเจ็บปวดเพิ่มขึ้นหลังวันที่ 4 — อาจเป็นสัญญาณของ Dry Socket กรุณาติดต่อทันตแพทย์</div>
+    <div class="heatmap-legend">
+      <div class="heatmap-leg-item"><div class="heatmap-leg-dot" style="background:var(--g)"></div>ปกติ (0-3)</div>
+      <div class="heatmap-leg-item"><div class="heatmap-leg-dot" style="background:var(--y)"></div>ปานกลาง (4-6)</div>
+      <div class="heatmap-leg-item"><div class="heatmap-leg-dot" style="background:var(--r)"></div>รุนแรง (7-10)</div>
+    </div>`;
+  painBody.appendChild(wrap);
+})();
+
 </script>
 </body>
 </html>

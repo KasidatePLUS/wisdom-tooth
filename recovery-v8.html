@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <!-- ═══ SEO META ═══ -->
-<title>Wisdom Tooth Recovery Tracker · wisdomtooth.memolab.me</title>
+<title>Wisdom Tooth Recovery Tracker v8 · wisdomtooth.memolab.me</title>
 <meta name="description" content="ติดตามการฟื้นตัวหลังถอนฟันคุดแบบ Real-time ทุก 6 ชั่วโมง ครบ 30 วัน พร้อมข้อมูล Wound Biology อาหาร และการดูแลแผลในแต่ละช่วง — สำหรับให้ข้อมูลเท่านั้น ไม่ใช่คำแนะนำทางการแพทย์">
 <meta name="keywords" content="ฟันคุด,ถอนฟันคุด,recovery,wisdom tooth,oral surgery,แผลหลังถอนฟัน,memolab">
 <meta name="author" content="memolab.me">
@@ -224,6 +224,7 @@ textarea.ob-field{resize:vertical;min-height:68px;line-height:1.7}
 .stb[data-s="dos"].on{background:rgba(48,209,88,.13);border-color:var(--g);color:var(--g)}
 .stb[data-s="donts"].on{background:rgba(255,58,92,.13);border-color:var(--r);color:var(--r)}
 .stb[data-s="cough"].on{background:rgba(191,90,242,.13);border-color:var(--p);color:var(--p)}
+.stb[data-s="nutri"].on{background:rgba(191,90,242,.18);border-color:var(--p);color:var(--p)}
 .spanel{display:none}.spanel.vis{display:block;animation:si .15s ease}
 
 /* ━━━ CONTENT ━━━ */
@@ -585,8 +586,27 @@ html { -webkit-overflow-scrolling: touch; }
 .cbanner { transition: opacity .3s, max-height .3s; overflow: hidden; }
 .cbanner.hidden { opacity: 0; max-height: 0; margin: 0; padding: 0; border: none; }
 
-/* ━━━ CONFETTI CANVAS ━━━ */
-#confetti-canvas { position:fixed;inset:0;pointer-events:none;z-index:9990; }
+/* ━━━ NUTRIENT SYNERGY SYSTEM ━━━ */
+.nutribox{background:linear-gradient(135deg,rgba(191,90,242,.08),rgba(191,90,242,.02));border:1px solid rgba(191,90,242,.22);border-radius:9px;padding:11px 13px}
+.nutri-tit{font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;letter-spacing:2px;color:var(--p);margin-bottom:8px}
+.nutri-phase{display:inline-flex;font-family:'JetBrains Mono',monospace;font-size:7.5px;font-weight:700;padding:2px 8px;border-radius:3px;background:var(--p3);color:var(--p);margin-bottom:8px}
+.nutri-section{margin-bottom:8px}
+.nutri-lbl{font-family:'JetBrains Mono',monospace;font-size:7.5px;font-weight:700;color:var(--p);letter-spacing:1px;margin-bottom:4px}
+.nutri-item{display:flex;gap:6px;font-size:11.5px;line-height:1.75;color:var(--tx2);margin-bottom:3px;padding:5px 8px;border-radius:5px}
+.nutri-item.primary{background:rgba(191,90,242,.08);border-left:2px solid rgba(191,90,242,.3)}
+.nutri-item.secondary{background:rgba(90,200,250,.06);border-left:2px solid rgba(90,200,250,.25)}
+.nutri-ico{flex-shrink:0;font-size:9px;margin-top:2px;color:var(--p)}
+.nutri-warn{background:rgba(255,136,0,.08);border:1px solid rgba(255,136,0,.25);border-radius:6px;padding:6px 9px;font-size:11px;line-height:1.72;color:var(--o);margin:5px 0;font-weight:600}
+.nutri-note{background:rgba(255,214,10,.06);border:1px solid rgba(255,214,10,.18);border-radius:6px;padding:7px 10px;font-size:11px;line-height:1.72;color:var(--tx2);margin-top:6px}
+.nutri-nt{font-family:'JetBrains Mono',monospace;font-size:7.5px;font-weight:700;color:var(--y);letter-spacing:1px;margin-bottom:3px}
+
+/* ━━━ FALSE SAFETY WARNING (Days 3–5) ━━━ */
+.false-safety-warn{background:rgba(255,136,0,.10);border:1.5px solid rgba(255,136,0,.45);border-radius:8px;padding:9px 13px;font-size:11.5px;line-height:1.75;color:var(--tx2);margin:8px 0;animation:fsw-pulse 3s ease-in-out infinite}
+@keyframes fsw-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,136,0,0)}50%{box-shadow:0 0 0 3px rgba(255,136,0,.12)}}
+.fsw-t{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;color:var(--o);letter-spacing:1.5px;margin-bottom:5px}
+.false-safety-warn strong{color:var(--o)}
+
+
 
 /* ━━━ BOTTOM NAV ━━━ */
 .bottom-nav {
@@ -876,7 +896,7 @@ html { -webkit-overflow-scrolling: touch; }
     <div class="ss">
       <div class="ss-title">เกี่ยวกับ</div>
       <div class="ss-row"><span class="ss-label">เว็บไซต์</span><span class="ss-val" style="color:var(--b)">wisdomtooth.memolab.me</span></div>
-      <div class="ss-row"><span class="ss-label">เวอร์ชัน</span><span class="ss-val">v7 Production</span></div>
+      <div class="ss-row"><span class="ss-label">เวอร์ชัน</span><span class="ss-val">v8 Production</span></div>
     </div>
     <div class="disc-footer" style="font-size:11px;color:var(--tx3);line-height:1.7;padding-top:12px;border-top:1px solid var(--bd)">🔒 ข้อมูลของคุณถูกเก็บไว้ในอุปกรณ์ของคุณเท่านั้น ไม่ได้ส่งไปยังเซิร์ฟเวอร์ใดๆ · This page is for informational purposes only and does not constitute medical advice.</div>
   </div>
@@ -1102,6 +1122,7 @@ html { -webkit-overflow-scrolling: touch; }
 <!-- ═══ SECTION TABS ═══ -->
 <div class="stabs" id="stabsbar">
   <button class="stb on" data-s="bio" onclick="setTab(this,'bio')">🔬 Biology</button>
+  <button class="stb" data-s="nutri" onclick="setTab(this,'nutri')">💊 สารอาหาร</button>
   <button class="stb" data-s="look" onclick="setTab(this,'look')">👁 ลักษณะ</button>
   <button class="stb" data-s="food" onclick="setTab(this,'food')">🍚 อาหาร</button>
   <button class="stb" data-s="slow" onclick="setTab(this,'slow')">⏱ แผลช้า?</button>
@@ -1430,7 +1451,32 @@ function getSlow(sl){
 }
 
 // ══════════════════════════════════════════════════════════════
-// SLOT DATA  —  40 slots (Day 1–10) + generated Day 11–30
+// NUTRIENT SYNERGY SYSTEM
+// ══════════════════════════════════════════════════════════════
+function getNutri(sl){
+  const h=sl.h0;
+  let phase,primary,secondary,note,warn='';
+  if(h<48){
+    phase='INITIAL TISSUE REPAIR — ชม. 0–48';
+    primary=['🥩 โปรตีน (1.2–1.5g/kg/วัน): ไข่ตุ๋น นม โยเกิร์ต ซุปไก่ — สร้าง Fibrin + Granulation Tissue','🦪 Zinc (11mg/วัน): เมล็ดฟักทอง ถั่ว ข้าวโอ๊ต — เร่ง Wound Healing Enzymes + Collagenase'];
+    secondary=['🫚 Omega-3: ปลา ช่วยควบคุม Inflammation ไม่ให้เกินขนาด','💊 Vitamin A: ฟักทอง แครอท ช่วย Epithelial cell growth เริ่มต้น'];
+    warn='กินก่อนยา NSAIDs ทุกครั้ง ท้องว่าง = คลื่นไส้ = อาเจียน = กดแผล';
+    note='Zinc + Protein = วัตถุดิบหลักสร้าง Fibrin Clot และ Platelet aggregation ใน 0–48 ชม.แรก';
+  } else if(h<336){
+    phase='COLLAGEN SYNTHESIS — วัน 3–14';
+    primary=['🍊 Vitamin C (500–1000mg/วัน): ส้ม มะนาว กีวี ฝรั่ง — Hydroxylates Proline+Lysine ใน Collagen','🥩 โปรตีน: ต้องการต่อเนื่อง สร้าง Collagen Type I และ III','🦪 Zinc: เสริมต่อเนื่อง — Lysyl oxidase ต้องการ Zinc เชื่อม Collagen fibers'];
+    secondary=['🥚 Proline + Glycine (Gelatin/Collagen peptide): กระดูกไก่ต้ม ซุปต้ม gelatin','🫚 Omega-3: ต้านอักเสบต่อเนื่อง M1→M2 Macrophage switch'];
+    warn='ขาด Vitamin C = Collagen สร้างไม่ได้ = แผลหายช้า (Scurvy-like effect)';
+    note='Vitamin C เป็น Co-factor ของ Prolyl hydroxylase — ขาดแม้แต่น้อยส่งผลต่อ Collagen quality ทันที';
+  } else {
+    phase='BONE REMODELING + NERVE REGENERATION';
+    primary=['🦴 Calcium (1000mg/วัน): นม โยเกิร์ต ปลาตัวเล็ก — Bone Mineralization (Lamellar Bone)','☀️ Vitamin D (1000–2000 IU): แสงแดด ปลาแซลมอน ไข่แดง — ดูดซึม Calcium เข้ากระดูก','🧠 Vitamin B12: ปลา เนื้อสัตว์ ไข่ นม — Schwann cell Myelination = ชาดีขึ้น'];
+    secondary=['🍊 Vitamin C: ยังช่วย Collagen Cross-linking ต่อเนื่อง','🦪 Zinc: เสริม Bone Remodeling + Osteoblast function'];
+    warn='ชายัง 100% หลัง 6 สัปดาห์ → ตรวจ B12 + ปรึกษาทันตแพทย์ทำ Nerve assessment';
+    note='B12 สำคัญมากถ้ายังชา — Schwann cells ต้องการ B12 สร้าง Myelin sheath รอบ Axon ที่กำลัง Regenerate';
+  }
+  return `<div class="nutribox"><div class="nutri-tit">💊 NUTRIENT SYNERGY SYSTEM</div><div class="nutri-phase">${phase}</div><div class="nutri-section"><div class="nutri-lbl">⭐ สารอาหารหลัก (Priority)</div>${primary.map(i=>`<div class="nutri-item primary"><span class="nutri-ico">▸</span><div>${i}</div></div>`).join('')}</div><div class="nutri-section"><div class="nutri-lbl">✦ สารอาหารเสริม</div>${secondary.map(i=>`<div class="nutri-item secondary"><span class="nutri-ico">▸</span><div>${i}</div></div>`).join('')}</div>${warn?`<div class="nutri-warn">⚡ ${warn}</div>`:''}<div class="nutri-note"><div class="nutri-nt">🔬 กลไก</div>${note}</div></div>`;
+}
 // ══════════════════════════════════════════════════════════════
 const DAYS=[
 {id:1,lb:'วันที่ 1',tt:'วันผ่าตัด — ช่วงวิกฤตสูงสุด',ph:'pc',pn:'CRITICAL',pg:3,pc_:'var(--r)',slots:[
@@ -1446,16 +1492,16 @@ const DAYS=[
 {h0:42,h1:48,lbl:'48 ชม. · บวมควรหยุด · Milestone #2',sub:'อา 12:00–18:00 · จุดตัดสำคัญ',rb:'rh',rbt:'HIGH',cl:56,cc:'var(--o)',bio:{stage:'48-HOUR CHECKPOINT — ชม. 42–48',main:`ครบ 48 ชม. = <strong class="bh">บวมต้องหยุดเพิ่ม</strong> · <strong>Fibroblasts</strong> ทำงานเต็มที่สร้าง Collagen III · <strong class="bg">Keratinocytes</strong> เริ่มเคลื่อนตัว 0.5–1 mm/วัน = Epithelialization เริ่ม`,cells:[{t:'48-hr Rule',b:'บวมหยุด = ปกติ | บวมยังเพิ่ม = Infection พบแพทย์วันนั้น'},{t:'Epithelialization',b:'Keratinocytes เริ่มปิดขอบแผล 0.5–1mm/วัน'},{t:'Collagen III',b:'หนาขึ้น ให้โครงสร้างมากขึ้น'},{t:'Granulation',b:'หนาขึ้นแต่ยังเสี่ยง Dry Socket ถึงวัน 5'}],warn:'<span class="bh">กฎเหล็ก: บวมต้องหยุดที่ 48 ชม.</span>'},risks:['ถ้าบวมยังเพิ่มหลัง 48 ชม. = Infection → พบแพทย์','Dry Socket ยังเสี่ยงสูง'],dos:['บ้วนน้ำเกลือหลังอาหารทุกมื้อ','ลองอ้าปากออกกำลัง 3–5 ครั้ง เช้า-เย็น'],donts:['🚫 ยังห้ามออกกำลังกายหนัก'],resume:['กลับทำงาน office เบาๆ ได้'],emg:'บวมยังเพิ่มขึ้นหลัง 48 ชม. → Infection พบแพทย์วันนี้เลย',cough:'🟠 HIGH (56%) — <strong>วันจันทร์คลินิกเปิด รีบขอยาแก้ไอตอนเช้า</strong>'}
 ]},
 {id:3,lb:'วันที่ 3',tt:'Proliferation · 72 ชม. Milestone',ph:'pw',pn:'WARNING',pg:23,pc_:'var(--y)',slots:[
-{h0:48,h1:54,lbl:'บวมยุบชัดเจน · Epithelialization Active',sub:'⚠️ รู้สึกดี ≠ หายแล้ว',rb:'rh',rbt:'HIGH',cl:50,cc:'var(--y)',bio:{stage:'PROLIFERATION — EPITHELIALIZATION — ชม. 48–54',main:`<strong class="bg">Keratinocytes</strong> เคลื่อนตัว 0.5–1 mm/วัน · Fibroblasts สร้าง Collagen III + ECM · <strong class="bh">Dry Socket เกิดถ้า</strong> Granulation ถูกรบกวน ยังเสี่ยงสูงมากช่วง 3–5 วัน`,cells:[{t:'Keratinocytes',b:'ปิดขอบแผล ชั้น 2–3 เซลล์บาง ยังฉีกจากแรงดันได้'},{t:'Collagen III',b:'Scaffold หนาขึ้น ยังอ่อนตัว'},{t:'Dry Socket',b:'ถ้า Granulation หลุด = กระดูกเปลือย ปวด 9–10/10'},{t:'False Safety',b:'รู้สึกดีขึ้นเพราะอักเสบลด แต่ Granulation ยังบอบบาง'}],warn:'<span class="br">คนส่วนใหญ่ที่เกิด Dry Socket มักเกิดวัน 3–4</span>'},risks:['Dry Socket ยังเป็นความเสี่ยงหลัก ระวังมากที่สุด','Suture ระคาย ห้ามดึง'],dos:['กินยาปฏิชีวนะครบ ห้ามหยุด','บ้วนน้ำเกลือหลังอาหาร','นวดกล้ามเนื้อแก้มเบาๆ'],donts:['🚫 ห้ามหยุดยาปฏิชีวนะ','🚫 ห้ามออกกำลังกายหนัก','🚫 ห้ามว่ายน้ำ'],resume:['กลับทำงาน office ปกติได้','เดินออกกำลังกายเบา-ปานกลาง'],emg:'เจ็บกลับมาเพิ่ม + เบ้าสีขาว/เทา + กลิ่นเหม็น = Dry Socket → โทรหาทันตแพทย์ทันที',cough:'🟡 MEDIUM-HIGH (50%) — Epithelium บางปิดขอบแผล ไอแรงยังรบกวนได้'},
-{h0:54,h1:60,lbl:'Collagen III หนาขึ้น · Neovascularization',sub:'จ 00:00–06:00',rb:'rh',rbt:'HIGH',cl:44,cc:'var(--y)',bio:{stage:'COLLAGEN III DEPOSITION — ชม. 54–60',main:`Collagen III ถักหนาขึ้น · <strong class="bg">Neovascularization เต็มที่</strong>: Capillary loops เต็มเบ้า เนื้อแดงสดเข้ม · <strong>Myofibroblasts</strong> เร่ง Wound Contraction แผลหดลง ~5–10%`,cells:[{t:'Collagen III',b:'Network หนาขึ้น'},{t:'หลอดเลือดใหม่',b:'เนื้อแดงสดในเบ้า = แผลเลี้ยงตัวเองได้'},{t:'Myofibroblasts',b:'ดึงขอบแผล แผลหดลง 5–10%'},{t:'Osteoblasts',b:'เพิ่งเริ่ม Migrate เข้าเบ้า'}],warn:'<span class="bh">เนื้อแดงสดในเบ้า = ดีมาก</span> ขาว/เทา + กลิ่นเหม็น = Dry Socket'},risks:['Dry Socket ยังเป็นได้','Food impaction เศษอาหารติดในเบ้า'],dos:['Syringe ล้างเบ้าหลังอาหาร','สังเกตสีในเบ้า'],donts:['🚫 ห้ามแยงหรือล้วงแผล'],resume:['ออกกำลังกาย yoga stretching เดินเร็วได้'],emg:'เจ็บพุ่งขึ้นอีกครั้ง + กลิ่นเหม็น + เบ้าสีขาว/เทา → Dry Socket พบทันตแพทย์',cough:'🟡 MEDIUM-HIGH (44%) — ถ้าไอต่อเนื่อง 3+ วัน ควรปรึกษาแพทย์เรื่องสาเหตุไอด้วย'},
-{h0:60,h1:66,lbl:'ฟกช้ำสีเปลี่ยน · Collagen I เริ่มปรากฏ',sub:'จ 06:00–12:00 · สีเปลี่ยน = ดี',rb:'rm',rbt:'MEDIUM',cl:38,cc:'var(--y)',bio:{stage:'COLLAGEN I APPEARS — ชม. 60–66',main:`<strong>Collagen Type I</strong> เริ่มปรากฏ (แข็งแรงกว่า Type III 3×) · <strong class="bh">Biliverdin→Bilirubin</strong> = ฟกช้ำเขียว/เหลือง · Wound Contraction แผลหดลง ~15%`,cells:[{t:'Collagen I',b:'เริ่มปรากฏ แข็งแรงกว่า III 3×'},{t:'Bilirubin',b:'ฟกช้ำสีเปลี่ยน = Macrophages เก็บกวาด = ดีมาก'},{t:'Wound Contraction',b:'แผลหดลง ~15%'},{t:'Osteoblasts',b:'เริ่ม Migrate เข้าเบ้า'}],warn:'<span class="bg">ฟกช้ำสีเปลี่ยนเขียว/เหลือง = ดีมาก!</span>'},risks:['Dry Socket ยังเป็นได้ถึงวัน 5','ไข้ > 38.5°C + เจ็บมากขึ้น = Infection'],dos:['Turmeric/ขมิ้น + นมอุ่น Anti-inflammatory','Vitamin C ช่วย Collagen synthesis','อ้าปากออกกำลัง 3 เซต/วัน'],donts:['🚫 ห้ามกดรอยฟกช้ำ','🚫 ห้ามอ้าปากกว้างเกิน 2/3'],resume:['ประชุม in-person ได้'],emg:'ไข้ > 38.5°C + เจ็บมากขึ้น + บวมไม่ยุบ → Infection พบแพทย์วันนี้',cough:'🟡 MEDIUM (38%) — ถ้าไออย่างต่อเนื่อง ควรปรึกษาแพทย์เรื่องสาเหตุไอโดยตรง'},
-{h0:66,h1:72,lbl:'72 ชม. · Milestone #3 🎉 · Dry Socket Risk ลดฮวบ',sub:'จ 12:00–18:00 · จุดเปลี่ยนสำคัญ',rb:'rm',rbt:'MEDIUM',cl:30,cc:'var(--y)',bio:{stage:'72-HOUR MILESTONE — MATURE GRANULATION — ชม. 66–72',main:`ครบ 72 ชม. = <strong class="bh">Granulation tissue Mature</strong> ระดับหนึ่ง · Fibrin mesh ถูกแทนที่เกือบสมบูรณ์ · <strong class="bg">Capillary loops</strong> ทำงานเต็มที่ · Dry Socket risk <strong>ลดลง ~60%</strong>`,cells:[{t:'Granulation Mature',b:'แน่นพอต้านแรงดันจากไอได้มากขึ้น'},{t:'Dry Socket Risk',b:'ลดลง ~60% แต่ยังไม่หมดถึงวัน 5'},{t:'Collagen I/III',b:'Collagen I เพิ่มขึ้นเรื่อยๆ'},{t:'Epithelium',b:'ปิดขอบแผล ~30–40% ยังบาง'}],warn:'<span class="bh">ผ่าน 72 ชม. ≠ ปลอดภัย 100%</span>'},risks:['Dry Socket ลดลงมากแต่ยังไม่หมดถึงวัน 5','Infection ยังเป็นความเสี่ยงถ้า Hygiene ไม่ดี'],dos:['บ้วนน้ำเกลือ แรงขึ้นได้เล็กน้อย ยัง "ปล่อยไหล"','อ้าปากออกกำลังเพิ่มองศา'],donts:['🚫 ยังห้ามอาหารแข็ง เหนียว','🚫 ห้ามว่ายน้ำ'],resume:['ออกกำลังกายเบา yoga เดินเร็วได้'],emg:'เจ็บพุ่งขึ้นอีกครั้ง + กลิ่นผิดปกติ = Dry Socket พบทันตแพทย์วันนี้',cough:'🟡 MEDIUM (30%) — Granulation แน่นขึ้น ความเสี่ยง Catastrophic ลดมาก'}
+{h0:48,h1:54,lbl:'บวมยุบชัดเจน · Epithelialization Active',sub:'⚠️ รู้สึกดี ≠ หายแล้ว',rb:'rh',rbt:'HIGH',cl:50,cc:'var(--y)',bio:{stage:'PROLIFERATION — EPITHELIALIZATION — ชม. 48–54',main:`<strong class="bg">Keratinocytes</strong> เคลื่อนตัว 0.5–1 mm/วัน · Fibroblasts สร้าง Collagen III + ECM · <strong class="bh">Dry Socket เกิดถ้า</strong> Granulation ถูกรบกวน ยังเสี่ยงสูงมากช่วง 3–5 วัน`,cells:[{t:'Keratinocytes',b:'ปิดขอบแผล ชั้น 2–3 เซลล์บาง ยังฉีกจากแรงดันได้'},{t:'Collagen III',b:'Scaffold หนาขึ้น ยังอ่อนตัว'},{t:'Dry Socket',b:'ถ้า Granulation หลุด = กระดูกเปลือย ปวด 9–10/10'},{t:'False Safety',b:'รู้สึกดีขึ้นเพราะอักเสบลด แต่ Granulation ยังบอบบาง'}],warn:'<span class="br">คนส่วนใหญ่ที่เกิด Dry Socket มักเกิดวัน 3–4</span>'},risks:['Dry Socket ยังเป็นความเสี่ยงหลัก ระวังมากที่สุด','Suture ระคาย ห้ามดึง'],dos:['กินยาปฏิชีวนะครบ ห้ามหยุด','บ้วนน้ำเกลือหลังอาหาร','นวดกล้ามเนื้อแก้มเบาๆ'],donts:['🚫 ห้ามหยุดยาปฏิชีวนะ','🚫 ห้ามออกกำลังกายหนัก','🚫 ห้ามว่ายน้ำ'],resume:['กลับทำงาน office ปกติได้','เดินออกกำลังกายเบา-ปานกลาง'],emg:'เจ็บกลับมาเพิ่ม + เบ้าสีขาว/เทา + กลิ่นเหม็น = Dry Socket → โทรหาทันตแพทย์ทันที',cough:'🟡 MEDIUM-HIGH (50%) — Epithelium บางปิดขอบแผล ไอแรงยังรบกวนได้',falseSafety:true},
+{h0:54,h1:60,lbl:'Collagen III หนาขึ้น · Neovascularization',sub:'จ 00:00–06:00',rb:'rh',rbt:'HIGH',cl:44,cc:'var(--y)',bio:{stage:'COLLAGEN III DEPOSITION — ชม. 54–60',main:`Collagen III ถักหนาขึ้น · <strong class="bg">Neovascularization เต็มที่</strong>: Capillary loops เต็มเบ้า เนื้อแดงสดเข้ม · <strong>Myofibroblasts</strong> เร่ง Wound Contraction แผลหดลง ~5–10%`,cells:[{t:'Collagen III',b:'Network หนาขึ้น'},{t:'หลอดเลือดใหม่',b:'เนื้อแดงสดในเบ้า = แผลเลี้ยงตัวเองได้'},{t:'Myofibroblasts',b:'ดึงขอบแผล แผลหดลง 5–10%'},{t:'Osteoblasts',b:'เพิ่งเริ่ม Migrate เข้าเบ้า'}],warn:'<span class="bh">เนื้อแดงสดในเบ้า = ดีมาก</span> ขาว/เทา + กลิ่นเหม็น = Dry Socket'},risks:['Dry Socket ยังเป็นได้','Food impaction เศษอาหารติดในเบ้า'],dos:['Syringe ล้างเบ้าหลังอาหาร','สังเกตสีในเบ้า'],donts:['🚫 ห้ามแยงหรือล้วงแผล'],resume:['ออกกำลังกาย yoga stretching เดินเร็วได้'],emg:'เจ็บพุ่งขึ้นอีกครั้ง + กลิ่นเหม็น + เบ้าสีขาว/เทา → Dry Socket พบทันตแพทย์',cough:'🟡 MEDIUM-HIGH (44%) — ถ้าไอต่อเนื่อง 3+ วัน ควรปรึกษาแพทย์เรื่องสาเหตุไอด้วย',falseSafety:true},
+{h0:60,h1:66,lbl:'ฟกช้ำสีเปลี่ยน · Collagen I เริ่มปรากฏ',sub:'จ 06:00–12:00 · สีเปลี่ยน = ดี',rb:'rm',rbt:'MEDIUM',cl:38,cc:'var(--y)',bio:{stage:'COLLAGEN I APPEARS — ชม. 60–66',main:`<strong>Collagen Type I</strong> เริ่มปรากฏ (แข็งแรงกว่า Type III 3×) · <strong class="bh">Biliverdin→Bilirubin</strong> = ฟกช้ำเขียว/เหลือง · Wound Contraction แผลหดลง ~15%`,cells:[{t:'Collagen I',b:'เริ่มปรากฏ แข็งแรงกว่า III 3×'},{t:'Bilirubin',b:'ฟกช้ำสีเปลี่ยน = Macrophages เก็บกวาด = ดีมาก'},{t:'Wound Contraction',b:'แผลหดลง ~15%'},{t:'Osteoblasts',b:'เริ่ม Migrate เข้าเบ้า'}],warn:'<span class="bg">ฟกช้ำสีเปลี่ยนเขียว/เหลือง = ดีมาก!</span>'},risks:['Dry Socket ยังเป็นได้ถึงวัน 5','ไข้ > 38.5°C + เจ็บมากขึ้น = Infection'],dos:['Turmeric/ขมิ้น + นมอุ่น Anti-inflammatory','Vitamin C ช่วย Collagen synthesis','อ้าปากออกกำลัง 3 เซต/วัน'],donts:['🚫 ห้ามกดรอยฟกช้ำ','🚫 ห้ามอ้าปากกว้างเกิน 2/3'],resume:['ประชุม in-person ได้'],emg:'ไข้ > 38.5°C + เจ็บมากขึ้น + บวมไม่ยุบ → Infection พบแพทย์วันนี้',cough:'🟡 MEDIUM (38%) — ถ้าไออย่างต่อเนื่อง ควรปรึกษาแพทย์เรื่องสาเหตุไอโดยตรง',falseSafety:true},
+{h0:66,h1:72,lbl:'72 ชม. · Milestone #3 🎉 · Dry Socket Risk ลดฮวบ',sub:'จ 12:00–18:00 · จุดเปลี่ยนสำคัญ',rb:'rm',rbt:'MEDIUM',cl:30,cc:'var(--y)',bio:{stage:'72-HOUR MILESTONE — MATURE GRANULATION — ชม. 66–72',main:`ครบ 72 ชม. = <strong class="bh">Granulation tissue Mature</strong> ระดับหนึ่ง · Fibrin mesh ถูกแทนที่เกือบสมบูรณ์ · <strong class="bg">Capillary loops</strong> ทำงานเต็มที่ · Dry Socket risk <strong>ลดลง ~60%</strong>`,cells:[{t:'Granulation Mature',b:'แน่นพอต้านแรงดันจากไอได้มากขึ้น'},{t:'Dry Socket Risk',b:'ลดลง ~60% แต่ยังไม่หมดถึงวัน 5'},{t:'Collagen I/III',b:'Collagen I เพิ่มขึ้นเรื่อยๆ'},{t:'Epithelium',b:'ปิดขอบแผล ~30–40% ยังบาง'}],warn:'<span class="bh">ผ่าน 72 ชม. ≠ ปลอดภัย 100%</span>'},risks:['Dry Socket ลดลงมากแต่ยังไม่หมดถึงวัน 5','Infection ยังเป็นความเสี่ยงถ้า Hygiene ไม่ดี'],dos:['บ้วนน้ำเกลือ แรงขึ้นได้เล็กน้อย ยัง "ปล่อยไหล"','อ้าปากออกกำลังเพิ่มองศา'],donts:['🚫 ยังห้ามอาหารแข็ง เหนียว','🚫 ห้ามว่ายน้ำ'],resume:['ออกกำลังกายเบา yoga เดินเร็วได้'],emg:'เจ็บพุ่งขึ้นอีกครั้ง + กลิ่นผิดปกติ = Dry Socket พบทันตแพทย์วันนี้',cough:'🟡 MEDIUM (30%) — Granulation แน่นขึ้น ความเสี่ยง Catastrophic ลดมาก',falseSafety:true}
 ]},
 {id:4,lb:'วันที่ 4',tt:'Collagen I เพิ่มขึ้น · Tissue แข็งแรง',ph:'pw',pn:'WARNING',pg:33,pc_:'var(--y)',slots:[
-{h0:72,h1:78,lbl:'Collagen I เพิ่มขึ้น · Granulation แน่น',sub:'จ 18:00–00:00 · Turning Point',rb:'rm',rbt:'MEDIUM',cl:26,cc:'var(--y)',bio:{stage:'COLLAGEN I DOMINANCE — ชม. 72–78',main:`<strong>Collagen Type I</strong> เพิ่มสัดส่วนมากขึ้น · <strong class="bg">Lysyl oxidase</strong> เชื่อม Collagen fibers · Epithelium ปิด ~40–50% · ความแข็งแรงแผล <strong class="bh">~35–40%</strong>`,cells:[{t:'Collagen I',b:'เพิ่มขึ้นเรื่อยๆ'},{t:'Lysyl oxidase',b:'Enzyme เชื่อม Collagen ต้องการ Copper + Zinc'},{t:'Epithelium 40–50%',b:'ปิดได้เกือบครึ่ง ยังบาง'},{t:'Osteoblasts',b:'สร้าง Woven Bone ชั้นบางๆ ในเบ้า'}],warn:'<span class="bh">ความเสี่ยงหลักเปลี่ยนจาก Clot → Infection</span>'},risks:['Dry Socket ยังเป็นได้จนถึงวัน 5','Infection จาก Oral bacteria'],dos:['แปรงฟันบริเวณแผลด้วยแปรงขนนิ่มพิเศษเบาๆ','กินอาหารนุ่มๆ เคี้ยวฝั่งขวาได้เบาๆ','บ้วนน้ำเกลือ 4–6 ครั้ง/วัน'],donts:['🚫 ยังห้ามอาหารแข็ง เหนียวมาก กระดูก','🚫 ห้ามว่ายน้ำ'],resume:['กลับทำงาน office ปกติได้','ออกกำลังกายเบา-ปานกลาง'],emg:'เจ็บพุ่งสูงกะทันหัน + กลิ่นเหม็น = Dry Socket/Infection พบแพทย์',cough:'🟡 LOW-MEDIUM (26%) — Tissue แข็งแรงขึ้น ไม่ต้องกดแก้มก่อนไออีกแล้ว'},
-{h0:78,h1:84,lbl:'ECM แน่นขึ้น · Wound Contraction',sub:'อ 00:00–06:00',rb:'rm',rbt:'MEDIUM',cl:22,cc:'var(--y)',bio:{stage:'ECM MATURATION — ชม. 78–84',main:`<strong>Myofibroblasts</strong> เร่ง <strong class="bh">Wound Contraction</strong> แผลเล็กลง ~15–20% · ECM ถักเป็นโครงสร้าง 3 มิติแน่น · <strong class="bg">Woven Bone</strong> เริ่มก่อตัว`,cells:[{t:'Wound Contraction',b:'แผลหดลง 15–20%'},{t:'ECM 3D',b:'Collagen + Fibronectin + Proteoglycans แน่น'},{t:'Woven Bone',b:'กระดูกชั่วคราวเพิ่งก่อตัว'},{t:'Strength ~45%',b:'รับกิจกรรมเบา-ปานกลางได้ดีแล้ว'}],warn:'<span class="bg">Wound Contraction ทำให้แผลเล็กลงตามธรรมชาติ</span>'},risks:['Infection จาก Oral bacteria','Suture อาจรู้สึกระคายมากขึ้น ปกติ'],dos:['อ้าปากออกกำลังเพิ่มองศาได้มากขึ้น','ดูแล Oral Hygiene เต็มที่'],donts:['🚫 ยังห้ามอาหารต้องเคี้ยวแรงฝั่งขวา','🚫 ห้ามว่ายน้ำ'],resume:['ออกกำลังกายปานกลาง jogging เบาๆ pilates ได้'],emg:'มีหนองออกจากแผล → ติดต่อทันตแพทย์วันนี้',cough:'🟢 LOW (22%) — Tissue แข็งแรงพอสมควร ไอแทบไม่กระทบแผลแล้ว'},
-{h0:84,h1:90,lbl:'Woven Bone ก่อตัว · Epithelium 60%+',sub:'อ 06:00–12:00',rb:'rm',rbt:'MEDIUM',cl:18,cc:'var(--y)',bio:{stage:'EARLY BONE REMODELING — ชม. 84–90',main:`<strong>Woven Bone</strong> ก่อตัวหนาขึ้น · Epithelium ปิด ~60–65% · Collagen I เป็น Dominant type · ความแข็งแรงแผล <strong class="bh">~50–55%</strong>`,cells:[{t:'Woven Bone',b:'สร้างเร็ว ไม่เป็นระเบียบ จะถูกแทนที่ด้วย Lamellar'},{t:'Epithelium 60%',b:'ปิดมากกว่าครึ่งแล้ว ยังบาง'},{t:'Collagen I',b:'Dominant type แล้ว Cross-linking เพิ่มขึ้น'},{t:'Strength 50%',b:'รับกิจกรรมเบา-ปานกลางได้ดี'}],warn:'<span class="bg">แผลแข็งแรงครึ่งหนึ่งของปกติ</span>'},risks:['Infection ถ้า Hygiene ไม่ดี','Bone remodeling ดำเนินต่อ 2–4 เดือน'],dos:['Vitamin C + Zinc + Calcium เสริม','บ้วนน้ำเกลือต่อเนื่อง'],donts:['🚫 ยังห้ามอาหารแข็งกรุบกรอบ กระดูก','🚫 ห้ามว่ายน้ำ'],resume:['กิจกรรมชีวิตประจำวันเกือบทั้งหมดได้แล้ว'],emg:'เจ็บพุ่งสูงกะทันหัน + บวมกลับมา + หนอง → Infection พบแพทย์',cough:'🟢 LOW (18%) — ไออย่างรุนแรงอาจเจ็บนิดๆ แต่ไม่อันตราย'},
-{h0:90,h1:96,lbl:'พรุ่งนี้ Dry Socket Window ปิด',sub:'อ 12:00–18:00',rb:'rm',rbt:'MEDIUM',cl:16,cc:'var(--y)',bio:{stage:'PRE-DRY SOCKET WINDOW CLOSE — ชม. 90–96',main:`Granulation แน่นมาก · Collagen I Dominant · Epithelium ~65–70% · <strong class="bh">พรุ่งนี้ครบ 5 วัน = Dry Socket Window ปิด</strong>`,cells:[{t:'Granulation',b:'แน่นมาก โอกาส Dry Socket < 5%'},{t:'Epithelium 65%',b:'ปิดเกือบ 2/3 แล้ว'},{t:'Schwann cells',b:'เริ่ม Remyelination ชาจะค่อยๆ ดีขึ้น'},{t:'Woven Bone',b:'หนาขึ้น Osteoblasts ทำงานเต็มที่'}],warn:'<span class="bh">พรุ่งนี้ Dry Socket Window ปิด!</span>'},risks:['ยังเสี่ยง Dry Socket จนถึงวัน 5 ครบ','Infection ถ้า Hygiene ไม่ดี'],dos:['รักษา Oral Hygiene เต็มที่','เตรียมนัดตัดไหมกับทันตแพทย์ (วัน 7)'],donts:['🚫 ยังห้ามอาหารแข็งกรุบกรอบ'],resume:['ออกกำลังกาย jogging เบาๆ ได้'],emg:'ปวดเพิ่มขึ้นอีกครั้งพร้อมกลิ่นผิดปกติ → Dry Socket/Infection พบแพทย์',cough:'🟢 LOW (16%) — แทบไม่กระทบแผล'}
+{h0:72,h1:78,lbl:'Collagen I เพิ่มขึ้น · Granulation แน่น',sub:'จ 18:00–00:00 · Turning Point',rb:'rm',rbt:'MEDIUM',cl:26,cc:'var(--y)',bio:{stage:'COLLAGEN I DOMINANCE — ชม. 72–78',main:`<strong>Collagen Type I</strong> เพิ่มสัดส่วนมากขึ้น · <strong class="bg">Lysyl oxidase</strong> เชื่อม Collagen fibers · Epithelium ปิด ~40–50% · ความแข็งแรงแผล <strong class="bh">~35–40%</strong>`,cells:[{t:'Collagen I',b:'เพิ่มขึ้นเรื่อยๆ'},{t:'Lysyl oxidase',b:'Enzyme เชื่อม Collagen ต้องการ Copper + Zinc'},{t:'Epithelium 40–50%',b:'ปิดได้เกือบครึ่ง ยังบาง'},{t:'Osteoblasts',b:'สร้าง Woven Bone ชั้นบางๆ ในเบ้า'}],warn:'<span class="bh">ความเสี่ยงหลักเปลี่ยนจาก Clot → Infection</span>'},risks:['Dry Socket ยังเป็นได้จนถึงวัน 5','Infection จาก Oral bacteria'],dos:['แปรงฟันบริเวณแผลด้วยแปรงขนนิ่มพิเศษเบาๆ','กินอาหารนุ่มๆ เคี้ยวฝั่งขวาได้เบาๆ','บ้วนน้ำเกลือ 4–6 ครั้ง/วัน'],donts:['🚫 ยังห้ามอาหารแข็ง เหนียวมาก กระดูก','🚫 ห้ามว่ายน้ำ'],resume:['กลับทำงาน office ปกติได้','ออกกำลังกายเบา-ปานกลาง'],emg:'เจ็บพุ่งสูงกะทันหัน + กลิ่นเหม็น = Dry Socket/Infection พบแพทย์',cough:'🟡 LOW-MEDIUM (26%) — Tissue แข็งแรงขึ้น ไม่ต้องกดแก้มก่อนไออีกแล้ว',falseSafety:true},
+{h0:78,h1:84,lbl:'ECM แน่นขึ้น · Wound Contraction',sub:'อ 00:00–06:00',rb:'rm',rbt:'MEDIUM',cl:22,cc:'var(--y)',bio:{stage:'ECM MATURATION — ชม. 78–84',main:`<strong>Myofibroblasts</strong> เร่ง <strong class="bh">Wound Contraction</strong> แผลเล็กลง ~15–20% · ECM ถักเป็นโครงสร้าง 3 มิติแน่น · <strong class="bg">Woven Bone</strong> เริ่มก่อตัว`,cells:[{t:'Wound Contraction',b:'แผลหดลง 15–20%'},{t:'ECM 3D',b:'Collagen + Fibronectin + Proteoglycans แน่น'},{t:'Woven Bone',b:'กระดูกชั่วคราวเพิ่งก่อตัว'},{t:'Strength ~45%',b:'รับกิจกรรมเบา-ปานกลางได้ดีแล้ว'}],warn:'<span class="bg">Wound Contraction ทำให้แผลเล็กลงตามธรรมชาติ</span>'},risks:['Infection จาก Oral bacteria','Suture อาจรู้สึกระคายมากขึ้น ปกติ'],dos:['อ้าปากออกกำลังเพิ่มองศาได้มากขึ้น','ดูแล Oral Hygiene เต็มที่'],donts:['🚫 ยังห้ามอาหารต้องเคี้ยวแรงฝั่งขวา','🚫 ห้ามว่ายน้ำ'],resume:['ออกกำลังกายปานกลาง jogging เบาๆ pilates ได้'],emg:'มีหนองออกจากแผล → ติดต่อทันตแพทย์วันนี้',cough:'🟢 LOW (22%) — Tissue แข็งแรงพอสมควร ไอแทบไม่กระทบแผลแล้ว',falseSafety:true},
+{h0:84,h1:90,lbl:'Woven Bone ก่อตัว · Epithelium 60%+',sub:'อ 06:00–12:00',rb:'rm',rbt:'MEDIUM',cl:18,cc:'var(--y)',bio:{stage:'EARLY BONE REMODELING — ชม. 84–90',main:`<strong>Woven Bone</strong> ก่อตัวหนาขึ้น · Epithelium ปิด ~60–65% · Collagen I เป็น Dominant type · ความแข็งแรงแผล <strong class="bh">~50–55%</strong>`,cells:[{t:'Woven Bone',b:'สร้างเร็ว ไม่เป็นระเบียบ จะถูกแทนที่ด้วย Lamellar'},{t:'Epithelium 60%',b:'ปิดมากกว่าครึ่งแล้ว ยังบาง'},{t:'Collagen I',b:'Dominant type แล้ว Cross-linking เพิ่มขึ้น'},{t:'Strength 50%',b:'รับกิจกรรมเบา-ปานกลางได้ดี'}],warn:'<span class="bg">แผลแข็งแรงครึ่งหนึ่งของปกติ</span>'},risks:['Infection ถ้า Hygiene ไม่ดี','Bone remodeling ดำเนินต่อ 2–4 เดือน'],dos:['Vitamin C + Zinc + Calcium เสริม','บ้วนน้ำเกลือต่อเนื่อง'],donts:['🚫 ยังห้ามอาหารแข็งกรุบกรอบ กระดูก','🚫 ห้ามว่ายน้ำ'],resume:['กิจกรรมชีวิตประจำวันเกือบทั้งหมดได้แล้ว'],emg:'เจ็บพุ่งสูงกะทันหัน + บวมกลับมา + หนอง → Infection พบแพทย์',cough:'🟢 LOW (18%) — ไออย่างรุนแรงอาจเจ็บนิดๆ แต่ไม่อันตราย',falseSafety:true},
+{h0:90,h1:96,lbl:'พรุ่งนี้ Dry Socket Window ปิด',sub:'อ 12:00–18:00',rb:'rm',rbt:'MEDIUM',cl:16,cc:'var(--y)',bio:{stage:'PRE-DRY SOCKET WINDOW CLOSE — ชม. 90–96',main:`Granulation แน่นมาก · Collagen I Dominant · Epithelium ~65–70% · <strong class="bh">พรุ่งนี้ครบ 5 วัน = Dry Socket Window ปิด</strong>`,cells:[{t:'Granulation',b:'แน่นมาก โอกาส Dry Socket < 5%'},{t:'Epithelium 65%',b:'ปิดเกือบ 2/3 แล้ว'},{t:'Schwann cells',b:'เริ่ม Remyelination ชาจะค่อยๆ ดีขึ้น'},{t:'Woven Bone',b:'หนาขึ้น Osteoblasts ทำงานเต็มที่'}],warn:'<span class="bh">พรุ่งนี้ Dry Socket Window ปิด!</span>'},risks:['ยังเสี่ยง Dry Socket จนถึงวัน 5 ครบ','Infection ถ้า Hygiene ไม่ดี'],dos:['รักษา Oral Hygiene เต็มที่','เตรียมนัดตัดไหมกับทันตแพทย์ (วัน 7)'],donts:['🚫 ยังห้ามอาหารแข็งกรุบกรอบ'],resume:['ออกกำลังกาย jogging เบาๆ ได้'],emg:'ปวดเพิ่มขึ้นอีกครั้งพร้อมกลิ่นผิดปกติ → Dry Socket/Infection พบแพทย์',cough:'🟢 LOW (16%) — แทบไม่กระทบแผล',falseSafety:true}
 ]},
 {id:5,lb:'วันที่ 5',tt:'Dry Socket Window ปิด 🎉',ph:'pw',pn:'HEALING',pg:43,pc_:'var(--g)',slots:[
 {h0:96,h1:102,lbl:'🎉 Dry Socket Window ปิดแล้ว!',sub:'อ 18:00–00:00',rb:'rm',rbt:'MEDIUM',cl:12,cc:'var(--g)',bio:{stage:'DRY SOCKET WINDOW CLOSED — ชม. 96–102',main:`<strong class="bh">ครบ 5 วัน = Dry Socket Window ปิด!</strong> · Granulation แน่นพอ ไม่หลุดออกแล้ว · Epithelium ~75–80% · Collagen I Dominant · ความแข็งแรง <strong class="bh">~60%</strong>`,cells:[{t:'Dry Socket: CLOSED',b:'โอกาส < 1%'},{t:'Epithelium 75–80%',b:'เกือบปิดสมบูรณ์'},{t:'Collagen Crosslink',b:'Lysyl oxidase เชื่อม Collagen แน่นขึ้น'},{t:'Strength 60%',b:'รับกิจกรรมปานกลางได้ดี'}],warn:'<span class="bg">Dry Socket ปิดแล้ว! ยินดีด้วย!</span>'},risks:['Infection ยังเป็นความเสี่ยงหลักถ้า Hygiene ไม่ดี','Suture อาจหลวม ปกติ ห้ามดึง'],dos:['บ้วนน้ำเกลือต่อเนื่อง','เตรียมนัดตัดไหม (วัน 7)'],donts:['🚫 ห้ามอาหารแข็งมาก กระดูก ก้างปลา','🚫 ห้ามว่ายน้ำ ~10 วัน'],resume:['ออกกำลังกาย jogging เบาๆ ได้','กินอาหารส่วนใหญ่ได้แล้ว'],emg:'มีหนองออก + ไข้ + ปวดมาก → Infection ติดต่อทันตแพทย์',cough:'🟢 LOW (12%) — Granulation แน่น ไออย่างรุนแรงแทบไม่กระทบแผลแล้ว · <strong>ถ้าไอยังหนักมากถึงวัน 5 ควรพบแพทย์เรื่องไอโดยตรง</strong>'},
@@ -1475,32 +1521,32 @@ const DAYS=[
 {h0:156,h1:162,lbl:'Post-Suture Care · หลังตัดไหม',sub:'ศ 06:00–12:00 · ดูแลต่อหลังตัดไหม',rb:'rs',rbt:'POST-SUTURE',cl:1,cc:'var(--t)',bio:{stage:'POST-SUTURE REMOVAL — ชม. 156–162',main:`Collagen ยึดกันเอง · ขอบแผลปิดโดย <strong class="bg">Secondary Intention</strong> ใน 1–3 วัน · Lamellar Bone ต่อเนื่อง อีก 2–4 เดือน`,cells:[{t:'Suture ออกแล้ว',b:'Collagen ยึดกันเอง'},{t:'Secondary Intention',b:'ขอบแผลเปิด 1–2mm ปิดเองใน 1–3 วัน'},{t:'Bone',b:'Lamellar ยังสร้างต่อ อีก 2–4 เดือน'},{t:'Nerve',b:'ชาค่อยๆ ดีขึ้น'}],warn:'<span class="bg">หลังตัดไหม ชีวิตปกติได้เกือบ 100%</span>'},risks:['Infection ถ้า Hygiene ไม่ดี'],dos:['บ้วนน้ำเกลืออุ่น 3–4 ครั้ง/วัน','Oral Hygiene ปกติ'],donts:['🚫 ยังหลีกเลี่ยงอาหารแข็งมาก อีก 1 สัปดาห์','🚫 ห้ามว่ายน้ำ'],resume:['กิจกรรมชีวิตประจำวันทั้งหมด'],emg:'ปวดมากขึ้น + หนอง + บวมกลับมา → Late Infection พบแพทย์',cough:'🔵 MINIMAL (1%) — ไม่กระทบแผลแล้ว'},
 {h0:162,h1:168,lbl:'ครบ 7 วัน 🎉 · 1 สัปดาห์ผ่านไป',sub:'ศ 12:00–18:00 · ครบ 1 สัปดาห์',rb:'rn',rbt:'MINIMAL',cl:1,cc:'var(--b)',bio:{stage:'1-WEEK MILESTONE — ชม. 162–168',main:`ครบ 1 สัปดาห์! · Epithelium ปิดสมบูรณ์ · Collagen ~80% · Lamellar Bone ต่อเนื่อง · Nerve Regeneration ต่อเนื่อง`,cells:[{t:'Epithelium',b:'ปิดสมบูรณ์'},{t:'Collagen 80%',b:'เพิ่มขึ้น ~1%/วัน'},{t:'Bone',b:'Lamellar Bone ค่อยๆ แทนที่ Woven'},{t:'Nerve',b:'Axon Regeneration ต่อเนื่อง'}],warn:'<span class="bg">ครบ 1 สัปดาห์! ผ่านทุก Phase สำคัญแล้ว!</span>'},risks:['Bone remodeling ดำเนินต่อ','Late Infection (หายาก)'],dos:['ฉลองครบ 1 สัปดาห์!','Oral Hygiene ปกติ','บ้วนน้ำเกลือ 2–3 ครั้ง/วัน'],donts:['🚫 ยังหลีกเลี่ยงอาหารแข็งมาก','🚫 ห้ามว่ายน้ำจนครบ 2 สัปดาห์'],resume:['ชีวิตปกติ 95%+ ทุกอย่าง'],emg:'ปวดกลับมา + บวม + หนองใหม่ → Late Infection พบทันตแพทย์',cough:'🔵 MINIMAL (1%) — ไม่กระทบแผลอีกต่อไปแล้ว'}
 ]},
-{id:8,lb:'วันที่ 8',tt:'Lamellar Bone · ชีวิตปกติ 100%',ph:'pr',pn:'RECOVERY',pg:70,pc_:'var(--b)',slots:genLateSlots(8,168,50,'~82%','ส 00:00','Late Infection (หายากมาก)')},
-{id:9,lb:'วันที่ 9',tt:'Scar Maturation · Bone ~85%',ph:'pr',pn:'RECOVERY',pg:73,pc_:'var(--b)',slots:genLateSlots(9,192,50,'~85%','อา 00:00','Late Infection (หายากมาก)')},
-{id:10,lb:'วันที่ 10 🏁',tt:'ครบ 10 วัน · Bone ~87%',ph:'pr',pn:'RECOVERY',pg:77,pc_:'var(--b)',slots:genLateSlots(10,216,50,'~87%','จ 00:00','Late Infection (หายากมาก)')},
-{id:11,lb:'วันที่ 11',tt:'ครบ 2 สัปดาห์ · ว่ายน้ำได้! 🏊',ph:'pr',pn:'2 WEEKS',pg:80,pc_:'var(--g)',slots:genLateSlots(11,240,100,'~90%','จ 18:00','Late Infection',true)},
-{id:12,lb:'วันที่ 12',tt:'Bone ~92% · Nerve ดีขึ้น',ph:'pr',pn:'RECOVERY',pg:83,pc_:'var(--b)',slots:genLateSlots(12,264,100,'~92%','ส 18:00','')},
-{id:13,lb:'วันที่ 13',tt:'Bone ~93% · Collagen ~97%',ph:'pr',pn:'RECOVERY',pg:86,pc_:'var(--b)',slots:genLateSlots(13,288,100,'~93%','อา 18:00','')},
-{id:14,lb:'วันที่ 14',tt:'ครบ 2 สัปดาห์เต็ม · Bone ~95%',ph:'pr',pn:'2 WK FULL',pg:90,pc_:'var(--g)',slots:genLateSlots(14,312,100,'~95%','พ 18:00','ชายัง 100% ใน 2 สัปดาห์ → นัดตรวจ Nerve',false,true)},
-{id:15,lb:'วันที่ 15',tt:'Bone ~96% · Collagen ~99%',ph:'pr',pn:'RECOVERY',pg:92,pc_:'var(--b)',slots:genLateSlots(15,336,100,'~96%','พฤ 18:00','')},
-{id:16,lb:'วันที่ 16',tt:'Bone ~97% · Scar ซีดลง',ph:'pr',pn:'RECOVERY',pg:93,pc_:'var(--b)',slots:genLateSlots(16,360,100,'~97%','ศ 18:00','')},
-{id:17,lb:'วันที่ 17',tt:'Bone ~97% · Collagen ~99%',ph:'pr',pn:'RECOVERY',pg:94,pc_:'var(--b)',slots:genLateSlots(17,384,100,'~97%','ส 18:00','')},
-{id:18,lb:'วันที่ 18',tt:'Bone ~98% · Nerve ดีขึ้นมาก',ph:'pr',pn:'RECOVERY',pg:95,pc_:'var(--b)',slots:genLateSlots(18,408,100,'~98%','อา 18:00','')},
-{id:19,lb:'วันที่ 19',tt:'Bone ~98% · Collagen 100%',ph:'pr',pn:'RECOVERY',pg:96,pc_:'var(--b)',slots:genLateSlots(19,432,100,'~98%','จ 18:00','')},
-{id:20,lb:'วันที่ 20',tt:'Bone ~99% · ชีวิตปกติ 100%',ph:'pr',pn:'RECOVERY',pg:97,pc_:'var(--b)',slots:genLateSlots(20,456,100,'~99%','อ 18:00','')},
-{id:21,lb:'วันที่ 21',tt:'ครบ 3 สัปดาห์ · Collagen 100%',ph:'pr',pn:'3 WEEKS',pg:98,pc_:'var(--g)',slots:genLateSlots(21,480,100,'~99%','พ 18:00','ชายัง 100% ใน 3 สัปดาห์ → นัดตรวจ Nerve',false,true)},
-{id:22,lb:'วันที่ 22',tt:'Bone ~99% · Scar Mature',ph:'pr',pn:'RECOVERY',pg:99,pc_:'var(--b)',slots:genLateSlots(22,504,100,'~99%','พฤ 18:00','')},
-{id:23,lb:'วันที่ 23',tt:'Bone ~99% · Nerve ดีขึ้นมาก',ph:'pr',pn:'RECOVERY',pg:99,pc_:'var(--b)',slots:genLateSlots(23,528,100,'~99%','ศ 18:00','')},
-{id:24,lb:'วันที่ 24',tt:'Bone 99–100% · Scar จางลง',ph:'pr',pn:'RECOVERY',pg:99,pc_:'var(--b)',slots:genLateSlots(24,552,100,'~100%','ส 18:00','')},
-{id:25,lb:'วันที่ 25',tt:'Bone 100% · ชีวิตปกติสมบูรณ์',ph:'pr',pn:'RECOVERY',pg:100,pc_:'var(--g)',slots:genLateSlots(25,576,100,'~100%','อา 18:00','')},
-{id:26,lb:'วันที่ 26',tt:'Bone 100% · Scar Maturation ต่อ',ph:'pr',pn:'RECOVERY',pg:100,pc_:'var(--b)',slots:genLateSlots(26,600,100,'100%','จ 18:00','')},
-{id:27,lb:'วันที่ 27',tt:'Bone 100% · Nerve ดีขึ้น',ph:'pr',pn:'RECOVERY',pg:100,pc_:'var(--b)',slots:genLateSlots(27,624,100,'100%','อ 18:00','')},
-{id:28,lb:'วันที่ 28',tt:'ครบ 4 สัปดาห์ · Bone 100%',ph:'pr',pn:'4 WEEKS',pg:100,pc_:'var(--g)',slots:genLateSlots(28,648,100,'100%','พ 18:00','ชายัง 100% ใน 4 สัปดาห์ → พบทันตแพทย์ทำ Nerve assessment',false,true)},
-{id:29,lb:'วันที่ 29',tt:'Bone 100% · Scar จาง',ph:'pr',pn:'RECOVERY',pg:100,pc_:'var(--b)',slots:genLateSlots(29,672,100,'100%','พฤ 18:00','')},
-{id:30,lb:'วันที่ 30 🏆',tt:'ครบ 30 วัน Recovery สมบูรณ์!',ph:'pr',pn:'COMPLETE',pg:100,pc_:'var(--g)',slots:genLateSlots(30,696,100,'100%','ศ 18:00','ชายัง 100% ใน 30 วัน → พบทันตแพทย์ทำ Nerve assessment',false,true)}
+{id:8,lb:'วันที่ 8',tt:'Lamellar Bone · ชีวิตปกติ 100%',ph:'pr',pn:'RECOVERY',pg:70,pc_:'var(--b)',slots:genDailySlot(8,168,50,'~82%','ส 00:00','Late Infection (หายากมาก)')},
+{id:9,lb:'วันที่ 9',tt:'Scar Maturation · Bone ~85%',ph:'pr',pn:'RECOVERY',pg:73,pc_:'var(--b)',slots:genDailySlot(9,192,50,'~85%','อา 00:00','Late Infection (หายากมาก)')},
+{id:10,lb:'วันที่ 10 🏁',tt:'ครบ 10 วัน · Bone ~87%',ph:'pr',pn:'RECOVERY',pg:77,pc_:'var(--b)',slots:genDailySlot(10,216,50,'~87%','จ 00:00','Late Infection (หายากมาก)')},
+{id:11,lb:'วันที่ 11',tt:'ครบ 2 สัปดาห์ · ว่ายน้ำได้! 🏊',ph:'pr',pn:'2 WEEKS',pg:80,pc_:'var(--g)',slots:genDailySlot(11,240,100,'~90%','จ 18:00','Late Infection',true)},
+{id:12,lb:'วันที่ 12',tt:'Bone ~92% · Nerve ดีขึ้น',ph:'pr',pn:'RECOVERY',pg:83,pc_:'var(--b)',slots:genDailySlot(12,264,100,'~92%','ส 18:00','')},
+{id:13,lb:'วันที่ 13',tt:'Bone ~93% · Collagen ~97%',ph:'pr',pn:'RECOVERY',pg:86,pc_:'var(--b)',slots:genDailySlot(13,288,100,'~93%','อา 18:00','')},
+{id:14,lb:'วันที่ 14',tt:'ครบ 2 สัปดาห์เต็ม · Bone ~95%',ph:'pr',pn:'2 WK FULL',pg:90,pc_:'var(--g)',slots:genDailySlot(14,312,100,'~95%','พ 18:00','ชายัง 100% ใน 2 สัปดาห์ → นัดตรวจ Nerve',false,true)},
+{id:15,lb:'วันที่ 15',tt:'Bone ~96% · Collagen ~99%',ph:'pr',pn:'RECOVERY',pg:92,pc_:'var(--b)',slots:genDailySlot(15,336,100,'~96%','พฤ 18:00','')},
+{id:16,lb:'วันที่ 16',tt:'Bone ~97% · Scar ซีดลง',ph:'pr',pn:'RECOVERY',pg:93,pc_:'var(--b)',slots:genDailySlot(16,360,100,'~97%','ศ 18:00','')},
+{id:17,lb:'วันที่ 17',tt:'Bone ~97% · Collagen ~99%',ph:'pr',pn:'RECOVERY',pg:94,pc_:'var(--b)',slots:genDailySlot(17,384,100,'~97%','ส 18:00','')},
+{id:18,lb:'วันที่ 18',tt:'Bone ~98% · Nerve ดีขึ้นมาก',ph:'pr',pn:'RECOVERY',pg:95,pc_:'var(--b)',slots:genDailySlot(18,408,100,'~98%','อา 18:00','')},
+{id:19,lb:'วันที่ 19',tt:'Bone ~98% · Collagen 100%',ph:'pr',pn:'RECOVERY',pg:96,pc_:'var(--b)',slots:genDailySlot(19,432,100,'~98%','จ 18:00','')},
+{id:20,lb:'วันที่ 20',tt:'Bone ~99% · ชีวิตปกติ 100%',ph:'pr',pn:'RECOVERY',pg:97,pc_:'var(--b)',slots:genDailySlot(20,456,100,'~99%','อ 18:00','')},
+{id:21,lb:'วันที่ 21',tt:'ครบ 3 สัปดาห์ · Collagen 100%',ph:'pr',pn:'3 WEEKS',pg:98,pc_:'var(--g)',slots:genDailySlot(21,480,100,'~99%','พ 18:00','ชายัง 100% ใน 3 สัปดาห์ → นัดตรวจ Nerve',false,true)},
+{id:22,lb:'วันที่ 22',tt:'Bone ~99% · Scar Mature',ph:'pr',pn:'RECOVERY',pg:99,pc_:'var(--b)',slots:genDailySlot(22,504,100,'~99%','พฤ 18:00','')},
+{id:23,lb:'วันที่ 23',tt:'Bone ~99% · Nerve ดีขึ้นมาก',ph:'pr',pn:'RECOVERY',pg:99,pc_:'var(--b)',slots:genDailySlot(23,528,100,'~99%','ศ 18:00','')},
+{id:24,lb:'วันที่ 24',tt:'Bone 99–100% · Scar จางลง',ph:'pr',pn:'RECOVERY',pg:99,pc_:'var(--b)',slots:genDailySlot(24,552,100,'~100%','ส 18:00','')},
+{id:25,lb:'วันที่ 25',tt:'Bone 100% · ชีวิตปกติสมบูรณ์',ph:'pr',pn:'RECOVERY',pg:100,pc_:'var(--g)',slots:genDailySlot(25,576,100,'~100%','อา 18:00','')},
+{id:26,lb:'วันที่ 26',tt:'Bone 100% · Scar Maturation ต่อ',ph:'pr',pn:'RECOVERY',pg:100,pc_:'var(--b)',slots:genDailySlot(26,600,100,'100%','จ 18:00','')},
+{id:27,lb:'วันที่ 27',tt:'Bone 100% · Nerve ดีขึ้น',ph:'pr',pn:'RECOVERY',pg:100,pc_:'var(--b)',slots:genDailySlot(27,624,100,'100%','อ 18:00','')},
+{id:28,lb:'วันที่ 28',tt:'ครบ 4 สัปดาห์ · Bone 100%',ph:'pr',pn:'4 WEEKS',pg:100,pc_:'var(--g)',slots:genDailySlot(28,648,100,'100%','พ 18:00','ชายัง 100% ใน 4 สัปดาห์ → พบทันตแพทย์ทำ Nerve assessment',false,true)},
+{id:29,lb:'วันที่ 29',tt:'Bone 100% · Scar จาง',ph:'pr',pn:'RECOVERY',pg:100,pc_:'var(--b)',slots:genDailySlot(29,672,100,'100%','พฤ 18:00','')},
+{id:30,lb:'วันที่ 30 🏆',tt:'ครบ 30 วัน Recovery สมบูรณ์!',ph:'pr',pn:'COMPLETE',pg:100,pc_:'var(--g)',slots:genDailySlot(30,696,100,'100%','ศ 18:00','ชายัง 100% ใน 30 วัน → พบทันตแพทย์ทำ Nerve assessment',false,true)}
 ];
 
-// Generator สำหรับ Day 8–30
+// Generator สำหรับ Day 8–30 (v7 legacy — kept for reference)
 function genLateSlots(dayNum, h0Base, pg, bone, sub, nerveWarn, isSwimDay=false, isMilestone=false){
   const swimNote = isSwimDay ? '✅ ครบ 2 สัปดาห์ ว่ายน้ำสระได้แล้ว!' : '';
   const milNote = isMilestone ? ' · <span class="neu">ประเมิน Nerve ถ้ายังชา 100%</span>' : '';
@@ -1521,6 +1567,35 @@ function genLateSlots(dayNum, h0Base, pg, bone, sub, nerveWarn, isSwimDay=false,
     summ:`วัน ${dayNum}: Bone ${bone} · Collagen 100% · Nerve ดีขึ้น · Scar ซีดลงต่อเนื่อง · ชีวิตปกติ 100%${isSwimDay&&i===0?' 🏊 ว่ายน้ำสระได้แล้ว!':''}${isMilestone&&i===0?milNote:''}`,
     cough:'🔵 ZERO — ไม่มีผลกระทบต่อแผลอีกต่อไปแล้ว'
   }));
+}
+
+// v8: Single daily summary slot for Day 8–30 (Adaptive Phase Architecture)
+function genDailySlot(dayNum, h0Base, pg, bone, sub, nerveWarn, isSwimDay=false, isMilestone=false){
+  const swimNote = isSwimDay ? '✅ ครบ 2 สัปดาห์ ว่ายน้ำสระได้แล้ว!' : '';
+  const milNote = isMilestone ? ' · <span class="neu">ประเมิน Nerve ถ้ายังชา 100%</span>' : '';
+  const collagen = dayNum>=19 ? '100%' : '~'+(96+Math.min(dayNum-8,4))+'%';
+  return [{
+    h0:h0Base, h1:h0Base+24,
+    lbl:`วัน ${dayNum} · Bone ${bone} · Collagen ${collagen}${isSwimDay?' 🏊':''}${isMilestone?' 🎉':''}`,
+    sub:`${sub} · Bone Remodeling Phase · ${isSwimDay?'✅ ว่ายน้ำสระได้แล้ว!':'ชีวิตปกติ 100%'}`,
+    rb:'rn', rbt:isSwimDay?'🏊 SWIM!':isMilestone?'MILESTONE':'NORMAL', cl:0, cc:'var(--b)',
+    bio:{stage:`BONE REMODELING — วัน ${dayNum}`,
+      main:`<strong>Bone Remodeling</strong>: Osteoclasts ย่อย <strong>Woven Bone</strong> → Osteoblasts สร้าง <strong class="bh">${bone} Lamellar Bone</strong> · Haversian Remodeling ดำเนินต่อ · <strong>Collagen</strong>: <strong class="bg">${collagen}</strong> Cross-linking แน่นขึ้น · <strong>Nerve</strong>: ชาค่อยๆ ดีขึ้น${swimNote?` · <strong class="bg">${swimNote}</strong>`:''}`,
+      cells:[
+        {t:`Bone ${bone}`, b:'Lamellar Bone แทนที่ Woven Bone ผ่าน Haversian Remodeling'},
+        {t:'Collagen Cross-link', b:'Lysyl oxidase เชื่อม Collagen fibers แน่นขึ้น ความแข็งแรงเพิ่ม'},
+        {t:'Nerve Regen', b:'Axon งอกกลับ ~1–3mm/เดือน · เสียว/คัน = ดีมาก!'},
+        {t:'Scar Maturation', b:'สีชมพูซีดลงต่อเนื่อง · กลมกลืนกับผิวปกติใน 3–6 เดือน'}
+      ],
+      warn:`<span class="bg">ชีวิตปกติ 100%${nerveWarn?' · <span class="neu">'+nerveWarn+'</span>':''}</span>`},
+    risks:['Bone remodeling อาจรู้สึกตึงๆ ในเบ้าเป็นพักๆ ปกติ', nerveWarn||'Late Infection (หายากมากๆ)'].filter(Boolean),
+    dos:['ดูแล Oral Hygiene ปกติ: แปรงฟัน 2 ครั้ง/วัน ไหมขัดฟัน','บ้วนน้ำเกลือเมื่อต้องการ ไม่บังคับ','Vitamin C + Zinc + Calcium + B12 เสริม'],
+    donts:[],
+    resume:[swimNote||'✅ ทุกกิจกรรมปกติ 100%', isSwimDay?'✅ ว่ายน้ำสระได้แล้ว!':'✅ ว่ายน้ำสระได้แล้ว (ตั้งแต่วัน 14)'],
+    emg:'เจ็บผิดปกติ + บวมกลับมา + หนอง → พบทันตแพทย์ทันที',
+    summ:`วัน ${dayNum}: Bone ${bone} · Collagen ${collagen} · Nerve ดีขึ้น · Scar ซีดลง · ชีวิตปกติ 100%${isSwimDay?' 🏊 ว่ายน้ำสระได้แล้ว!':''}${isMilestone?milNote:''}`,
+    cough:'🔵 ZERO — ไม่มีผลกระทบต่อแผลอีกต่อไปแล้ว'
+  }];
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -1563,6 +1638,7 @@ function render(){
 
       const panels={
         bio: buildBio(sl.bio),
+        nutri: getNutri(sl),
         look: getLook(sl),
         food: getFood(sl),
         slow: getSlow(sl),
@@ -1583,6 +1659,7 @@ function render(){
         </div>
         <div class="sbdy">
           <div class="summ"><span class="sh">📋 ภาพรวม:</span> ${sl.summ||sl.lbl}</div>
+          ${sl.falseSafety?`<div class="false-safety-warn"><div class="fsw-t">⚠️ FALSE SAFETY WARNING — วัน 3–5</div>ความเจ็บปวดเริ่มลดลงแต่ <strong>Dry Socket (alveolar osteitis) ยังเสี่ยงสูงสุดในช่วงนี้!</strong> อย่าประมาท — Granulation Tissue ยังบอบบาง ยังงดดูด บ้วน หลอดดื่ม</div>`:''}
           ${Object.entries(panels).map(([k,v])=>`<div class="spanel${k===ACTIVE_TAB?' vis':''}" data-panel="${k}">${v}</div>`).join('')}
           <div class="ebox"><div class="et">🚨 เมื่อไหร่ต้องไปหาหมอทันที</div>${sl.emg}</div>
         </div>
@@ -1645,7 +1722,7 @@ window.addEventListener('visibilitychange',()=>{ if(document.hidden) saveScroll(
 // ══════════════════════════════════════════════════════════════
 // SWIPE LEFT/RIGHT → CHANGE ACTIVE TAB
 // ══════════════════════════════════════════════════════════════
-const TABS_ORDER=['bio','look','food','slow','risk','dos','donts','cough'];
+const TABS_ORDER=['bio','nutri','look','food','slow','risk','dos','donts','cough'];
 let _tx=0, _ty=0, _inSwipe=false;
 document.addEventListener('touchstart',e=>{ _tx=e.touches[0].clientX; _ty=e.touches[0].clientY; _inSwipe=false; },{passive:true});
 document.addEventListener('touchmove',e=>{

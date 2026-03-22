@@ -17,10 +17,10 @@
 <meta property="og:url" content="https://wisdomtooth.memolab.me/">
 <meta property="og:title" content="Wisdom Tooth Recovery Tracker · memolab.me">
 <meta property="og:description" content="ติดตามการฟื้นตัวหลังถอนฟันคุดแบบ Real-time ทุก 6 ชั่วโมง ครบ 30 วัน — ข้อมูลเพื่อการศึกษาเท่านั้น">
-<meta property="og:image" content="https://wisdomtooth.memolab.me/og-image.png">
+<meta property="og:image" content="https://wisdomtooth.memolab.me/og-image.svg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image:type" content="image/svg+xml">
 <meta property="og:image:alt" content="Wisdom Tooth Recovery Tracker — ติดตามการฟื้นตัวหลังถอนฟันคุด">
 <meta property="og:site_name" content="memolab.me">
 <meta property="og:locale" content="th_TH">
@@ -30,7 +30,7 @@
 <meta name="twitter:url" content="https://wisdomtooth.memolab.me/">
 <meta name="twitter:title" content="Wisdom Tooth Recovery Tracker · memolab.me">
 <meta name="twitter:description" content="ติดตามการฟื้นตัวหลังถอนฟันคุดแบบ Real-time ทุก 6 ชั่วโมง ครบ 30 วัน">
-<meta name="twitter:image" content="https://wisdomtooth.memolab.me/og-image.png">
+<meta name="twitter:image" content="https://wisdomtooth.memolab.me/og-image.svg">
 
 <!-- ═══ Structured Data ═══ -->
 <script type="application/ld+json">
@@ -359,7 +359,7 @@ textarea.ob-field{resize:vertical;min-height:68px;line-height:1.7}
 
 @media(max-width:480px){
   .content{padding:5px 10px 80px}
-  .hdr,.filters,.cbanner,.nbar,.pcard,.med-disc,.qguide,.site-footer{margin-left:10px;margin-right:10px}
+  .hdr,.filters,.cbanner,.nbar,.pcard,.med-disc,.qguide,.site-footer,.refs-section{margin-left:10px;margin-right:10px}
   .filters,.stabs{padding-left:10px;padding-right:10px}
   .stm{min-width:58px}
   .bio-row,.look-grid,.food-cols,.slow-row{grid-template-columns:1fr}
@@ -900,6 +900,31 @@ html { -webkit-overflow-scrolling: touch; }
 .heatmap-leg-item{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--tx2)}
 .heatmap-leg-dot{width:8px;height:8px;border-radius:50%}
 
+/* ━━━ MEDICAL REFERENCES SECTION ━━━ */
+.refs-section{position:relative;z-index:10;margin:16px 14px 0;background:linear-gradient(135deg,rgba(10,132,255,.06),rgba(10,132,255,.02));border:1px solid rgba(10,132,255,.2);border-radius:13px;overflow:hidden}
+.refs-head{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;user-select:none}
+.refs-tit{font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;letter-spacing:2px;color:var(--b);text-transform:uppercase}
+.refs-chv{font-size:9px;color:var(--tx3);transition:transform .2s}
+.refs-section.open .refs-chv{transform:rotate(180deg)}
+.refs-body{display:none;padding:0 14px 14px}
+.refs-section.open .refs-body{display:block}
+.refs-desc{font-size:11px;color:var(--tx3);line-height:1.7;margin-bottom:10px}
+.refs-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+@media(max-width:580px){.refs-grid{grid-template-columns:1fr}}
+.refs-card{background:var(--sf2);border:1px solid var(--bd);border-radius:9px;padding:9px 11px;text-decoration:none;display:block;transition:border-color .15s,background .15s;-webkit-tap-highlight-color:transparent}
+.refs-card:hover{border-color:var(--b);background:rgba(10,132,255,.06)}
+.refs-card:active{transform:scale(.97)}
+.refs-source{font-family:'JetBrains Mono',monospace;font-size:7.5px;font-weight:700;letter-spacing:.8px;padding:1px 6px;border-radius:3px;margin-bottom:5px;display:inline-block}
+.rs-aaoms{background:rgba(10,132,255,.12);color:var(--b)}
+.rs-mayo{background:rgba(191,90,242,.12);color:var(--p)}
+.rs-tdc{background:rgba(48,209,88,.12);color:var(--g)}
+.rs-ada{background:rgba(255,214,10,.12);color:var(--y)}
+.rs-ncbi{background:rgba(90,200,250,.12);color:var(--t)}
+.rs-who{background:rgba(255,136,0,.12);color:var(--o)}
+.refs-card-title{font-size:12px;font-weight:700;color:var(--tx);line-height:1.4;margin-bottom:3px}
+.refs-card-desc{font-size:10.5px;color:var(--tx2);line-height:1.6}
+.refs-note{margin-top:10px;font-size:10px;color:var(--tx3);line-height:1.7;padding-top:8px;border-top:1px solid var(--bd)}
+
 /* ━━━ VOICE FAB ━━━ */
 #voice-fab{position:fixed;bottom:calc(144px + env(safe-area-inset-bottom,0px));right:16px;
   width:48px;height:48px;border-radius:50%;
@@ -1328,6 +1353,60 @@ html { -webkit-overflow-scrolling: touch; }
 </div>
 
 <div class="content" id="ct"></div>
+
+<!-- ═══ MEDICAL REFERENCES ═══ -->
+<section class="refs-section" id="refs-section">
+  <div class="refs-head" onclick="this.closest('.refs-section').classList.toggle('open')">
+    <div class="refs-tit">📚 แหล่งอ้างอิงทางการแพทย์</div>
+    <div class="refs-chv">▼</div>
+  </div>
+  <div class="refs-body">
+    <p class="refs-desc">ข้อมูลในหน้านี้อ้างอิงจากแหล่งความรู้ทางการแพทย์ที่ผ่านการตรวจสอบ ดังต่อไปนี้ — <strong style="color:var(--r)">อย่างไรก็ตามไม่สามารถใช้แทนคำแนะนำของทันตแพทย์ที่ดูแลคุณโดยตรง</strong></p>
+    <div class="refs-grid">
+      <a class="refs-card" href="https://www.aaoms.org/conditions-and-treatments/wisdom-teeth" target="_blank" rel="noopener noreferrer">
+        <div class="refs-source rs-aaoms">AAOMS</div>
+        <div class="refs-card-title">Wisdom Teeth Management</div>
+        <div class="refs-card-desc">American Association of Oral and Maxillofacial Surgeons — แนวทางปฏิบัติสำหรับการถอนฟันคุดและการดูแลหลังผ่าตัด</div>
+      </a>
+      <a class="refs-card" href="https://www.mayoclinic.org/diseases-conditions/dry-socket/symptoms-causes/syc-20354376" target="_blank" rel="noopener noreferrer">
+        <div class="refs-source rs-mayo">Mayo Clinic</div>
+        <div class="refs-card-title">Dry Socket — อาการและสาเหตุ</div>
+        <div class="refs-card-desc">Mayo Clinic — อธิบายกลไก อาการ ปัจจัยเสี่ยง และการรักษาภาวะ Alveolar Osteitis (Dry Socket)</div>
+      </a>
+      <a class="refs-card" href="https://www.ada.org/resources/research/science-and-research-institute/oral-health-topics/wisdom-teeth" target="_blank" rel="noopener noreferrer">
+        <div class="refs-source rs-ada">ADA</div>
+        <div class="refs-card-title">Wisdom Teeth — Oral Health Topics</div>
+        <div class="refs-card-desc">American Dental Association — ข้อมูลครอบคลุมเรื่องฟันคุด การผ่าตัด และการดูแลหลังถอน</div>
+      </a>
+      <a class="refs-card" href="https://pubmed.ncbi.nlm.nih.gov/28605808/" target="_blank" rel="noopener noreferrer">
+        <div class="refs-source rs-ncbi">PubMed / NCBI</div>
+        <div class="refs-card-title">Wound Healing After Tooth Extraction</div>
+        <div class="refs-card-desc">Pagni et al. — กระบวนการสมานแผลหลังถอนฟัน: Clot Formation, Granulation Tissue, Bone Remodeling</div>
+      </a>
+      <a class="refs-card" href="https://pubmed.ncbi.nlm.nih.gov/29282835/" target="_blank" rel="noopener noreferrer">
+        <div class="refs-source rs-ncbi">PubMed / NCBI</div>
+        <div class="refs-card-title">Alveolar Osteitis (Dry Socket) — Review</div>
+        <div class="refs-card-desc">Daly et al. — การทบทวนงานวิจัยเกี่ยวกับ Dry Socket: ระบาดวิทยา กลไก ปัจจัยเสี่ยง และการรักษา</div>
+      </a>
+      <a class="refs-card" href="https://medlineplus.gov/ency/patientinstructions/000391.htm" target="_blank" rel="noopener noreferrer">
+        <div class="refs-source rs-ncbi">MedlinePlus</div>
+        <div class="refs-card-title">Tooth Extraction — คำแนะนำหลังผ่าตัด</div>
+        <div class="refs-card-desc">U.S. National Library of Medicine — คำแนะนำการดูแลตนเองหลังถอนฟัน ครอบคลุมโภชนาการ ยา และสัญญาณเตือน</div>
+      </a>
+      <a class="refs-card" href="https://www.who.int/news-room/fact-sheets/detail/oral-health" target="_blank" rel="noopener noreferrer">
+        <div class="refs-source rs-who">WHO</div>
+        <div class="refs-card-title">Oral Health — WHO Fact Sheet</div>
+        <div class="refs-card-desc">องค์การอนามัยโลก — ภาพรวมสุขภาพช่องปาก ความสำคัญของการดูแลหลังผ่าตัดและการป้องกันการติดเชื้อ</div>
+      </a>
+      <a class="refs-card" href="https://www.tdc.or.th/" target="_blank" rel="noopener noreferrer">
+        <div class="refs-source rs-tdc">ทันตแพทยสภา</div>
+        <div class="refs-card-title">ทันตแพทยสภาแห่งประเทศไทย</div>
+        <div class="refs-card-desc">ทันตแพทยสภา (Thai Dental Council) — แหล่งข้อมูลทางทันตกรรมของประเทศไทย และค้นหาทันตแพทย์ที่ได้รับการรับรอง</div>
+      </a>
+    </div>
+    <p class="refs-note">⚕️ เนื้อหาในหน้านี้จัดทำโดยอ้างอิงแหล่งข้อมูลข้างต้นเพื่อการศึกษาเท่านั้น · ข้อมูลทางการแพทย์อาจมีการเปลี่ยนแปลง กรุณาตรวจสอบกับทันตแพทย์ที่ดูแลคุณสำหรับคำแนะนำที่เหมาะสมกับสภาพแผลของคุณโดยเฉพาะ</p>
+  </div>
+</section>
 
 <!-- ═══ FOOTER ═══ -->
 <footer class="site-footer">

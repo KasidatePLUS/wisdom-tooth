@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="gr1" cx="100%" cy="0%" r="65%">
+      <stop offset="0%" stop-color="#ff3a5c" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#06080d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gb1" cx="0%" cy="100%" r="55%">
+      <stop offset="0%" stop-color="#0a84ff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#06080d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0a84ff"/>
+      <stop offset="100%" stop-color="#5ac8fa"/>
+    </linearGradient>
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e2e7f5"/>
+      <stop offset="100%" stop-color="#8390b0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#06080d"/>
+  <rect width="1200" height="630" fill="url(#gr1)"/>
+  <rect width="1200" height="630" fill="url(#gb1)"/>
+
+  <!-- Scanline effect -->
+  <rect width="1200" height="630" fill="none" opacity="0.03"
+    style="background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,0.05) 2px,rgba(255,255,255,0.05) 3px)"/>
+
+  <!-- Left accent border -->
+  <rect x="0" y="0" width="6" height="630" fill="url(#accent)" rx="3"/>
+
+  <!-- Tag label -->
+  <rect x="90" y="120" width="290" height="34" rx="17" fill="#0f1220" stroke="#0a84ff" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="235" y="143" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" font-weight="700" fill="#0a84ff" text-anchor="middle" letter-spacing="3">POST-OP TRACKER · v8.1</text>
+
+  <!-- Main icon -->
+  <circle cx="1060" cy="300" r="160" fill="#0f1220" stroke="#20263d" stroke-width="1.5"/>
+  <text x="1060" y="370" font-family="serif" font-size="140" text-anchor="middle" fill="none" stroke="#e2e7f5" stroke-width="1">🦷</text>
+  <!-- Tooth shape (geometric fallback if emoji not rendered) -->
+  <g transform="translate(1005, 210)">
+    <path d="M55 0 C30 0 10 15 10 35 C10 50 0 80 5 110 C8 130 20 140 30 140 C40 140 45 130 55 130 C65 130 70 140 80 140 C90 140 102 130 105 110 C110 80 100 50 100 35 C100 15 80 0 55 0 Z" fill="#161b2e" stroke="#28305a" stroke-width="2"/>
+    <circle cx="35" cy="30" r="8" fill="#0a84ff" opacity="0.6"/>
+    <circle cx="75" cy="30" r="8" fill="#0a84ff" opacity="0.6"/>
+    <line x1="55" y1="0" x2="55" y2="130" stroke="#20263d" stroke-width="1.5" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Title lines -->
+  <text x="90" y="235" font-family="'Noto Sans Thai', 'Segoe UI', system-ui, sans-serif" font-size="58" font-weight="800" fill="#e2e7f5">Wisdom Tooth</text>
+  <text x="90" y="315" font-family="'Noto Sans Thai', 'Segoe UI', system-ui, sans-serif" font-size="58" font-weight="800" fill="#ff3a5c">Recovery Tracker</text>
+
+  <!-- Subtitle -->
+  <text x="90" y="375" font-family="'Noto Sans Thai', 'Segoe UI', system-ui, sans-serif" font-size="24" fill="#8390b0">ติดตามการฟื้นตัวหลังถอนฟันคุด · Real-Time · ครบ 30 วัน</text>
+
+  <!-- Feature badges -->
+  <g transform="translate(90, 410)">
+    <rect width="170" height="36" rx="18" fill="#161b2e" stroke="#ff3a5c" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="85" y="23" font-family="system-ui, sans-serif" font-size="13" fill="#ff3a5c" text-anchor="middle" font-weight="700">🏥 Smart Screener</text>
+  </g>
+  <g transform="translate(272, 410)">
+    <rect width="170" height="36" rx="18" fill="#161b2e" stroke="#0a84ff" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="85" y="23" font-family="system-ui, sans-serif" font-size="13" fill="#0a84ff" text-anchor="middle" font-weight="700">💊 Medication Log</text>
+  </g>
+  <g transform="translate(454, 410)">
+    <rect width="170" height="36" rx="18" fill="#161b2e" stroke="#30d158" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="85" y="23" font-family="system-ui, sans-serif" font-size="13" fill="#30d158" text-anchor="middle" font-weight="700">📈 Pain Heatmap</text>
+  </g>
+  <g transform="translate(636, 410)">
+    <rect width="170" height="36" rx="18" fill="#161b2e" stroke="#bf5af2" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="85" y="23" font-family="system-ui, sans-serif" font-size="13" fill="#bf5af2" text-anchor="middle" font-weight="700">🔊 Voice Guide</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="90" y1="480" x2="820" y2="480" stroke="#20263d" stroke-width="1"/>
+
+  <!-- Bottom URL -->
+  <text x="90" y="520" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="20" font-weight="700" fill="url(#accent)">wisdomtooth.memolab.me</text>
+  <text x="90" y="550" font-family="system-ui, sans-serif" font-size="14" fill="#424d6a">For informational purposes only · ไม่ใช่คำแนะนำทางการแพทย์ · powered by memolab.me</text>
+
+  <!-- Bottom-right neon dots decoration -->
+  <circle cx="1100" cy="540" r="4" fill="#0a84ff" opacity="0.7"/>
+  <circle cx="1120" cy="540" r="4" fill="#5ac8fa" opacity="0.5"/>
+  <circle cx="1140" cy="540" r="4" fill="#30d158" opacity="0.5"/>
+  <circle cx="1160" cy="540" r="4" fill="#ff3a5c" opacity="0.5"/>
+</svg>
